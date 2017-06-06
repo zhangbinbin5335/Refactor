@@ -1,0 +1,6 @@
+framework module Pods_CalfTrader {
+  umbrella header "Pods-CalfTrader-umbrella.h"
+
+  export *
+  module * { export * }
+}

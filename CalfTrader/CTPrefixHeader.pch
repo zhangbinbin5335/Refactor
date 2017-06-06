@@ -1,0 +1,39 @@
+//
+//  CTPrefixHeader.pch
+//  CalfTrader
+//
+//  Created by 张彬彬 on 2017/5/31.
+//  Copyright © 2017年 上海宏鹿. All rights reserved.
+//
+
+#ifndef CTPrefixHeader_pch
+#define CTPrefixHeader_pch
+
+#ifdef DEBUG
+    #if TARGET_IPHONE_SIMULATOR
+        #define CTNLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+    #else
+        #define CTNLog(...) printf("%s 第%d行 \n %s\n\n",__func__,__LINE__,[[NSString stringWithFormat:__VA_ARGS__]UTF8String])
+    #endif
+#else
+    #define CTNLog(...)
+#endif
+
+//RGB --> color
+#define UIColorWithRGBA(rgbValue, alpha1) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:alpha1]
+
+#define UIColorWithRGB(rgb) UIColorWithRGBA(rgb, 1.0)
+
+//
+#import "CTNetworkManager.h"
+#import "CTGlobalConfig.h"
+
+// model
+#import <YYModel/YYModel.h>
+
+#endif /* CTPrefixHeader_pch */
+
