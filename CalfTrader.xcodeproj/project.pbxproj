@@ -17,6 +17,11 @@
 		431D068B1EE52B4B004A6AC6 /* CTInvestmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D068A1EE52B4B004A6AC6 /* CTInvestmentController.m */; };
 		431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06971EE52C6B004A6AC6 /* CTDiscoverController.m */; };
 		431D069B1EE52C8B004A6AC6 /* CTUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D069A1EE52C8B004A6AC6 /* CTUserController.m */; };
+		431D069E1EE65B8E004A6AC6 /* CTHmPgNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D069D1EE65B8E004A6AC6 /* CTHmPgNewsModel.m */; };
+		431D06A41EE7A0AE004A6AC6 /* CTHmPgNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A31EE7A0AE004A6AC6 /* CTHmPgNewsCell.m */; };
+		431D06A71EE7C8AE004A6AC6 /* CTViewsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A61EE7C8AE004A6AC6 /* CTViewsFactory.m */; };
+		431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */; };
+		431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */; };
 		4323E54B1EDE641B00B25F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E54A1EDE641B00B25F07 /* main.m */; };
 		4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5611EDE64D600B25F07 /* CTAppDelegate.m */; };
 		4323E5701EDE69E500B25F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4323E56F1EDE69E500B25F07 /* Assets.xcassets */; };
@@ -52,6 +57,16 @@
 		431D06971EE52C6B004A6AC6 /* CTDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDiscoverController.m; sourceTree = "<group>"; };
 		431D06991EE52C8B004A6AC6 /* CTUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTUserController.h; sourceTree = "<group>"; };
 		431D069A1EE52C8B004A6AC6 /* CTUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTUserController.m; sourceTree = "<group>"; };
+		431D069C1EE65B8E004A6AC6 /* CTHmPgNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsModel.h; sourceTree = "<group>"; };
+		431D069D1EE65B8E004A6AC6 /* CTHmPgNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsModel.m; sourceTree = "<group>"; };
+		431D06A21EE7A0AE004A6AC6 /* CTHmPgNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsCell.h; sourceTree = "<group>"; };
+		431D06A31EE7A0AE004A6AC6 /* CTHmPgNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsCell.m; sourceTree = "<group>"; };
+		431D06A51EE7C8AE004A6AC6 /* CTViewsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTViewsFactory.h; sourceTree = "<group>"; };
+		431D06A61EE7C8AE004A6AC6 /* CTViewsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTViewsFactory.m; sourceTree = "<group>"; };
+		431D06A81EE7C913004A6AC6 /* UIView+CTFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CTFrame.h"; sourceTree = "<group>"; };
+		431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CTFrame.m"; sourceTree = "<group>"; };
+		431D06AB1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsPresenter.h; sourceTree = "<group>"; };
+		431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsPresenter.m; sourceTree = "<group>"; };
 		4323E5461EDE641B00B25F07 /* CalfTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalfTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4323E54A1EDE641B00B25F07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4323E55A1EDE641B00B25F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +138,8 @@
 		431D066E1EE5271F004A6AC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				431D069C1EE65B8E004A6AC6 /* CTHmPgNewsModel.h */,
+				431D069D1EE65B8E004A6AC6 /* CTHmPgNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +147,8 @@
 		431D066F1EE5271F004A6AC6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				431D06AB1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.h */,
+				431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -137,6 +156,8 @@
 		431D06701EE5271F004A6AC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				431D06A21EE7A0AE004A6AC6 /* CTHmPgNewsCell.h */,
+				431D06A31EE7A0AE004A6AC6 /* CTHmPgNewsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +392,8 @@
 				4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */,
 				4323E58F1EE0FED200B25F07 /* NSData+CTMD5.h */,
 				4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */,
+				431D06A81EE7C913004A6AC6 /* UIView+CTFrame.h */,
+				431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -393,6 +416,8 @@
 			children = (
 				4323E5801EE0367800B25F07 /* CTDESEncryption.h */,
 				4323E5811EE0367800B25F07 /* CTDESEncryption.m */,
+				431D06A51EE7C8AE004A6AC6 /* CTViewsFactory.h */,
+				431D06A61EE7C8AE004A6AC6 /* CTViewsFactory.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -590,11 +615,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431D06A71EE7C8AE004A6AC6 /* CTViewsFactory.m in Sources */,
 				4323E5911EE0FED200B25F07 /* NSData+CTMD5.m in Sources */,
 				431D067E1EE529F8004A6AC6 /* CTQuotationController.m in Sources */,
+				431D06A41EE7A0AE004A6AC6 /* CTHmPgNewsCell.m in Sources */,
 				431D06621EE14820004A6AC6 /* CTNotificationManager.m in Sources */,
 				431D069B1EE52C8B004A6AC6 /* CTUserController.m in Sources */,
+				431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */,
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
+				431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */,
 				4323E5781EDE978F00B25F07 /* CTLocationManager.m in Sources */,
 				431D068B1EE52B4B004A6AC6 /* CTInvestmentController.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
@@ -607,6 +636,7 @@
 				4323E54B1EDE641B00B25F07 /* main.m in Sources */,
 				4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */,
 				431D06761EE52760004A6AC6 /* CTHomePageController.m in Sources */,
+				431D069E1EE65B8E004A6AC6 /* CTHmPgNewsModel.m in Sources */,
 				431D06681EE50344004A6AC6 /* CTTabBarController.m in Sources */,
 				431D06731EE52748004A6AC6 /* CTViewController.m in Sources */,
 			);

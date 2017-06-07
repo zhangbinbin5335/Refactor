@@ -16,5 +16,8 @@ extern NSString *const CTBaseUrl;
 // 检查是否需要退出app
 extern NSString *const CTAPPExitApi;
 
+// homepage
+extern NSString *const CTHmPgNewsInfo;
+
 // NSUserDefaults 存储对应的key
 extern NSString *const CTNULastVersionNum;
