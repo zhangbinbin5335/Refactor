@@ -14,6 +14,7 @@ def shared_pods
     pod 'UMengUShare/Social/ReducedWeChat'
     pod 'UMengUShare/Social/ReducedQQ'
     pod 'UMengUShare/UI'
+    pod 'SDWebImage', '~> 3.8.2'
 end
 
 target 'CalfTrader' do

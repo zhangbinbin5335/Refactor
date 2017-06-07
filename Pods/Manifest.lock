@@ -22,6 +22,9 @@ PODS:
   - MBProgressHUD+JDragon (0.0.2):
     - MBProgressHUD (~> 0.9.2)
   - MJRefresh (3.1.12)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - UMengAnalytics (4.2.4)
   - UMengUShare/Core (6.4.3):
     - UMengUShare/Network
@@ -40,6 +43,7 @@ DEPENDENCIES:
   - Masonry (~> 1.0.2)
   - MBProgressHUD+JDragon (~> 0.0.2)
   - MJRefresh (~> 3.1.12)
+  - SDWebImage (~> 3.8.2)
   - UMengAnalytics (~> 4.2.4)
   - UMengUShare/Social/ReducedQQ
   - UMengUShare/Social/ReducedWeChat
@@ -54,10 +58,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MBProgressHUD+JDragon: f03c825ce4e3d0fd70000fe707970c2e7869be46
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
   UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 665a8e12dea4a0df113a62fadf9263dfc1b4086e
+PODFILE CHECKSUM: b3f02488bc9bfc293e32a5894ae346429334d95a
 
 COCOAPODS: 1.2.1

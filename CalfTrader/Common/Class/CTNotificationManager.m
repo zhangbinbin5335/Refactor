@@ -6,7 +6,8 @@
 //  Copyright © 2017年 上海宏鹿. All rights reserved.
 //
 
-
+NSString *kJPUSHAppkey = @"af90396b150f33517b0d8555";
+NSString *kJPUSHChannel = @"App Store";
 
 #import "CTNotificationManager.h"
 

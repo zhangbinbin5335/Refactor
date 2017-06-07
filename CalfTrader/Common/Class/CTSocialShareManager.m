@@ -10,7 +10,15 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <UMMobClick/MobClick.h>
 
-
+NSString *const kUMengAnalyticsAppKey = @"58bfc600a40fa3678e00060b";
+NSString *const kUMengChannelID = @"App Store";
+NSString *const kUMengSocialAppKey = @"58bfc600a40fa3678e00060b";
+NSString *const kWechatAppKey = @"wxb877604fa52dfc8c";
+NSString *const kWechatAppSecret = @"f7252b2af957eadbd7c5d2cca663910d";
+NSString *const kQQAppKey = @"1105973193";
+#warning 未设置有效值
+NSString *const kQQAppSecret = nil;
+NSString *const kRedirectURL = nil;
 
 @implementation CTSocialShareManager
 
