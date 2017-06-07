@@ -74,7 +74,7 @@ UITableViewDataSource>
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80;
+    return 100;
 }
 
 #pragma mark - ☎️notification

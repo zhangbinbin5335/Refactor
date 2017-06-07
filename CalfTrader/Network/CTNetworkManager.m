@@ -22,7 +22,6 @@ kParameterKey ParameterToken = @"XN_TOKEN";
 kParameterKey ParameterCIPHER = @"XN_CIPHER";
 kParameterKey ParameterAuth = @"XN_AUTH";
 
-NSString *kEncryptionKey = @"tZSvHgxs";
 
 @interface CTNetworkManager ()
 
