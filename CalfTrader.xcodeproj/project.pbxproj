@@ -22,6 +22,7 @@
 		431D06A71EE7C8AE004A6AC6 /* CTViewsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A61EE7C8AE004A6AC6 /* CTViewsFactory.m */; };
 		431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */; };
 		431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */; };
+		431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06AF1EE82984004A6AC6 /* NSString+CTTime.m */; };
 		4323E54B1EDE641B00B25F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E54A1EDE641B00B25F07 /* main.m */; };
 		4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5611EDE64D600B25F07 /* CTAppDelegate.m */; };
 		4323E5701EDE69E500B25F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4323E56F1EDE69E500B25F07 /* Assets.xcassets */; };
@@ -67,6 +68,8 @@
 		431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CTFrame.m"; sourceTree = "<group>"; };
 		431D06AB1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsPresenter.h; sourceTree = "<group>"; };
 		431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsPresenter.m; sourceTree = "<group>"; };
+		431D06AE1EE82984004A6AC6 /* NSString+CTTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CTTime.h"; sourceTree = "<group>"; };
+		431D06AF1EE82984004A6AC6 /* NSString+CTTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CTTime.m"; sourceTree = "<group>"; };
 		4323E5461EDE641B00B25F07 /* CalfTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalfTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4323E54A1EDE641B00B25F07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4323E55A1EDE641B00B25F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -394,6 +397,8 @@
 				4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */,
 				431D06A81EE7C913004A6AC6 /* UIView+CTFrame.h */,
 				431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */,
+				431D06AE1EE82984004A6AC6 /* NSString+CTTime.h */,
+				431D06AF1EE82984004A6AC6 /* NSString+CTTime.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -632,6 +637,7 @@
 				431D066B1EE52609004A6AC6 /* CTRootViewController.m in Sources */,
 				4323E57C1EDEB1D200B25F07 /* CTGlobalConfig.m in Sources */,
 				4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */,
+				431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */,
 				431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */,
 				4323E54B1EDE641B00B25F07 /* main.m in Sources */,
 				4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */,

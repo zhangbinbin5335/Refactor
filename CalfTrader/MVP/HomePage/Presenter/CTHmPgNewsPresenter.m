@@ -20,7 +20,7 @@
 -(void)requestNewsInfoCompletion:(CTHmPgPresenterCompletion)completion{
     __weak typeof(self) weakSelf = self;
     // 首页的消息列表
-    [[CTNetworkManager sharedManager]post:CTBaseUrl
+    [[CTNetworkManager sharedManager]post:@"http://new.xnsudai.com/"
                                 urlString:CTHmPgNewsInfo
                                parameters:nil
                                encryption:YES

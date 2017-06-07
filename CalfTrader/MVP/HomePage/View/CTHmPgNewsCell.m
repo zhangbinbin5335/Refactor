@@ -7,6 +7,7 @@
 //
 
 #import "CTHmPgNewsCell.h"
+#import "NSString+CTTime.h"
 
 static NSString *kCTHmPgNewsCellID = @"CTHmPgNewsCellID";
 const CGFloat kOffSet = 10;
@@ -28,7 +29,6 @@ const CGFloat kOffSet = 10;
 -(instancetype)initWithStyle:(UITableViewCellStyle)style
              reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.cellHeight = 44;
         [self setupSubViews];
         [self setupLayout];
     }
@@ -60,25 +60,26 @@ const CGFloat kOffSet = 10;
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel);
         make.bottom.equalTo(self.lineView.mas_top);
-        make.right.equalTo(self.nickNameLabel.mas_left);
+        make.top.equalTo(self.describeContent.mas_bottom).offset(kOffSet);
         make.width.mas_equalTo(100);
     }];
     [self.nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.timeLabel.mas_right);
-        make.bottom.equalTo(self.timeLabel);
-        make.right.equalTo(self.prasieLabel.mas_left);
+        make.bottom.top.equalTo(self.timeLabel);
+        make.width.mas_equalTo(100);
     }];
     [self.prasieLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.nickNameLabel.mas_right);
-        make.bottom.equalTo(self.timeLabel);
+        make.bottom.top.equalTo(self.timeLabel);
         make.right.equalTo(self.thumbnailImageView.mas_left);
-        make.width.mas_equalTo(80);
     }];
     [self.thumbnailImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(kOffSet);
+//        make.top.equalTo(self.titleLabel.mas_top).offset(kOffSet);
         make.right.equalTo(self.contentView.mas_right).offset(-kOffSet);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-kOffSet);
-        make.width.mas_equalTo(60);
+        make.bottom.equalTo(self.lineView.mas_top);
+        make.width.mas_equalTo(80);
+        make.height.mas_lessThanOrEqualTo(80);
+        make.centerY.equalTo(self.describeContent.mas_centerY);
     }];
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(1);
@@ -100,6 +101,7 @@ const CGFloat kOffSet = 10;
     if (!_describeContent) {
         _describeContent = [CTViewsFactory ct_labelWithText:@"deafult content"];
         _describeContent.numberOfLines = 0;
+//        _describeContent.backgroundColor = [UIColor redColor];
     }
     
     return _describeContent;
@@ -136,7 +138,9 @@ const CGFloat kOffSet = 10;
 -(UIImageView *)thumbnailImageView{
     if (!_thumbnailImageView) {
         _thumbnailImageView = [[UIImageView alloc] init];
-        _thumbnailImageView.backgroundColor = [UIColor yellowColor];
+        _thumbnailImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _thumbnailImageView.clipsToBounds = YES;
+//        _thumbnailImageView.backgroundColor = [UIColor yellowColor];
     }
     
     return _thumbnailImageView;
@@ -152,6 +156,7 @@ const CGFloat kOffSet = 10;
 #pragma mark -- public
 + (instancetype)cellWithTableView:(UITableView *)tableView{
     CTHmPgNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kCTHmPgNewsCellID];
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     if (!cell) {
         cell = [[CTHmPgNewsCell alloc]initWithStyle:UITableViewCellStyleDefault
                                     reuseIdentifier:kCTHmPgNewsCellID];
@@ -162,12 +167,12 @@ const CGFloat kOffSet = 10;
 -(void)fillData:(CTHmPgNewsModel *)model{
     self.titleLabel.text = model.title;
     self.describeContent.text = model.describeContent;
-//    self.timeLabel.text = model.
-    self.nickNameLabel.text = model.nickName;
-    self.prasieLabel.text = [NSString stringWithFormat:@"%lu人赞",(unsigned long)model.prasieCount];
+    self.timeLabel.text = [NSString convertTimeString:model.createTime];
+    self.nickNameLabel.text = model.nickname;
+    self.prasieLabel.text = [NSString stringWithFormat:@"%lu人赞",(unsigned long)model.praiseCounts];
     self.thumbnailImageView.image = [UIImage imageWithData:
                                                [NSData dataWithContentsOfURL:
-                                                [NSURL URLWithString:model.thumbnail]]];
+                                                [NSURL URLWithString:model.homePic]]];
 }
 
 @end

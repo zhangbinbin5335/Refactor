@@ -11,8 +11,6 @@
 
 @interface CTHmPgNewsCell : UITableViewCell
 
-@property (nonatomic, assign) CGFloat cellHeight; // 动态高度,default 44
-
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 -(void)fillData:(CTHmPgNewsModel*)model;
