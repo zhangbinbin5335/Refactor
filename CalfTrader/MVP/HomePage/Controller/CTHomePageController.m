@@ -36,11 +36,11 @@ UITableViewDataSource>
 -(void)initSubViews{
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.flashView;
-    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 100);
+    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
     
-    self.flashView.dataSource = @[@"http://new.xnsudai.com/systemCenter/c2078da09d6c4345bf03c932da7db312.jpg",
-                                  @"http://new.xnsudai.com/systemCenter/b1829cff33184f1995777fa6ce948586.png",
-                                  @"http://new.xnsudai.com/systemCenter/0c9cfc3edf1c4541841e5b55fa32be35.png"];
+    self.flashView.dataSource = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933469041&di=5c0f77e9c47025370a8d83aeebba872e&imgtype=0&src=http%3A%2F%2Fwww.liangtupian.com%2Fuploads%2Fmv%2F20150416%2F2015041622073712228.jpg",
+                                  @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933470203&di=12c9280476a1dd65fd6c170fc3c5525a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F3%2Fe9%2F72821378027.jpg",
+                                  @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933470202&di=139c6281531319f29c90a616f694aed7&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2015%2F150%2F35%2F542TBW786509.jpg"];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-44);
@@ -77,6 +77,9 @@ UITableViewDataSource>
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"最新消息";
+}
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self requestNewsInfo];

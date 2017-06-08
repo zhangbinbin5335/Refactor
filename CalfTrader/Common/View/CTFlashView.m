@@ -72,11 +72,11 @@ UICollectionViewDataSource>
 #pragma mark -- delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section{
-    return 1;
+    return self.dataSource.count;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.dataSource.count;
+    return 1;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -88,12 +88,19 @@ UICollectionViewDataSource>
         cell = [[CTFlashViewCell alloc]init];
     }
     
-    NSString *urlString = self.dataSource[indexPath.row];
+    NSString *urlString = self.dataSource[indexPath.item];
     
     [cell.thumbImageView sd_setImageWithURL:[NSURL URLWithString:urlString]
                            placeholderImage:nil];
     
     return cell;
+}
+
+// UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout*)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(collectionView.ct_width, collectionView.ct_height);
 }
 
 #pragma mark - ☸getter and setter
@@ -103,7 +110,7 @@ UICollectionViewDataSource>
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
         flowLayout.minimumLineSpacing = 0;
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
+
         _contentView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                           collectionViewLayout:flowLayout];
         
@@ -112,6 +119,10 @@ UICollectionViewDataSource>
         _contentView.dataSource = self;
         [_contentView registerClass:[CTFlashViewCell class]
          forCellWithReuseIdentifier:kCellID];
+        _contentView.showsVerticalScrollIndicator = NO;
+        _contentView.showsHorizontalScrollIndicator = NO;
+        _contentView.pagingEnabled = YES;
+        _contentView.backgroundColor = [UIColor whiteColor];
     }
     
     return _contentView;
