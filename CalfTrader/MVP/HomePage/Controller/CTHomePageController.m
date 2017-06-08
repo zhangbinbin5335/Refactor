@@ -33,8 +33,10 @@ UITableViewDataSource>
 #pragma mark - 🔒private
 -(void)initSubViews{
     [self.view addSubview:self.tableView];
+    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.equalTo(self.view);
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-44);
     }];
 }
 

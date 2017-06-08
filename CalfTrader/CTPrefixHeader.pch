@@ -43,6 +43,7 @@ alpha:alpha1]
 
 // 约束
 #import "Masonry.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* CTPrefixHeader_pch */
 
