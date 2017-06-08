@@ -23,4 +23,11 @@ typedef void(^ CTHmPgPresenterCompletion)(id response, NSError* error);
  */
 -(void)requestNewsInfoCompletion:(CTHmPgPresenterCompletion)completion;
 
+/**
+ 请求首页轮播数据
+
+ @param completion 请求结束回调
+ */
+-(void)requestFlashViewInfoCompltion:(CTHmPgPresenterCompletion)completion;
+
 @end

@@ -43,6 +43,19 @@
      ];
 }
 
+-(void)requestFlashViewInfoCompltion:(CTHmPgPresenterCompletion)completion{
+    // TODO : 获取用户ID
+    NSString *customerID = @"";
+    NSDictionary *parameters = @{@"customerId":customerID};
+    
+    [[CTNetworkManager sharedManager]post:CTBaseUrl
+                                urlString:CTHmFlashViewInfo
+                               parameters:parameters
+                               completion:^(id response, NSError *error) {
+                                   CTNLog(@"首页轮播数据 = %@",response);
+                               }
+     ];
+}
 #pragma mark - ☸getter and setter
 
 @end

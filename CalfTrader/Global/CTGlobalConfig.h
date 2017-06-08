@@ -18,6 +18,8 @@ extern NSString *const CTAPPExitApi;
 
 // homepage
 extern NSString *const CTHmPgNewsInfo;
+// 轮播数据
+extern NSString *const CTHmFlashViewInfo;
 
 // NSUserDefaults 存储对应的key
 extern NSString *const CTNULastVersionNum;

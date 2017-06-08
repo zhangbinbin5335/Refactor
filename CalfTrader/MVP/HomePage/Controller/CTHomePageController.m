@@ -9,12 +9,14 @@
 #import "CTHomePageController.h"
 #import "CTHmPgNewsCell.h"
 #import "CTHmPgNewsPresenter.h"
+#import "CTFlashView.h"
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
 UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView; // 新闻展示
+@property (nonatomic, strong) CTFlashView *flashView; // 顶部轮播view
 @property (nonatomic, strong) CTHmPgNewsPresenter *presenter;
 
 @end
@@ -33,7 +35,12 @@ UITableViewDataSource>
 #pragma mark - 🔒private
 -(void)initSubViews{
     [self.view addSubview:self.tableView];
+    self.tableView.tableHeaderView = self.flashView;
+    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 100);
     
+    self.flashView.dataSource = @[@"http://new.xnsudai.com/systemCenter/c2078da09d6c4345bf03c932da7db312.jpg",
+                                  @"http://new.xnsudai.com/systemCenter/b1829cff33184f1995777fa6ce948586.png",
+                                  @"http://new.xnsudai.com/systemCenter/0c9cfc3edf1c4541841e5b55fa32be35.png"];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.bottom.equalTo(self.view).offset(-44);
@@ -79,6 +86,9 @@ UITableViewDataSource>
     return 100;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section{
+    return 100;
+}
 #pragma mark - ☎️notification
 
 #pragma mark - 🎬event response
@@ -89,10 +99,17 @@ UITableViewDataSource>
         _tableView = [[UITableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     }
     
     return _tableView;
+}
+
+-(CTFlashView *)flashView{
+    if (!_flashView) {
+        _flashView = [[CTFlashView alloc] init];
+    }
+    
+    return _flashView;
 }
 
 -(CTHmPgNewsPresenter *)presenter{

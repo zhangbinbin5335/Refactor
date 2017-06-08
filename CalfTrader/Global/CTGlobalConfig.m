@@ -19,6 +19,9 @@ NSString *const CTBaseUrl = @"http://new.xnsudai.com/";
 NSString *const CTAPPExitApi = @"calfTrader-systemCenter-web/admin/iosAuditApi/Find.do";
 
 // homepage
+// 新闻
 NSString *const CTHmPgNewsInfo = @"calfTrader-communityCenter-api/information/listInf.do";
+// 轮播数据
+NSString *const CTHmFlashViewInfo = @"calfTrader-communityCenter-api/information/informationColumnBanNew.do";
 // NSUserDefaults 存储对应的key
 NSString *const CTNULastVersionNum = @"lastVersionBug";
