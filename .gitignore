@@ -62,6 +62,7 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-CalfTrader/Common/Class/CTNotificationManager.m
-CalfTrader/Common/Class/CTSocialShareManager.m
-CalfTrader/Network/CTNetworkManager.m
+CTNotificationManager.m
+CTSocialShareManager.m
+CTNetworkManager.m
+.DS_Store

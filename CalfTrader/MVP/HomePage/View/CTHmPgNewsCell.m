@@ -59,7 +59,7 @@ const CGFloat kOffSet = 10;
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel);
-        make.bottom.equalTo(self.lineView.mas_top);
+        make.bottom.equalTo(self.lineView.mas_top).offset(-kOffSet);
         make.top.equalTo(self.describeContent.mas_bottom).offset(kOffSet);
         make.width.mas_equalTo(100);
     }];
@@ -76,9 +76,9 @@ const CGFloat kOffSet = 10;
     [self.thumbnailImageView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.top.equalTo(self.titleLabel.mas_top).offset(kOffSet);
         make.right.equalTo(self.contentView.mas_right).offset(-kOffSet);
-        make.bottom.equalTo(self.lineView.mas_top);
-        make.width.mas_equalTo(80);
-        make.height.mas_lessThanOrEqualTo(80);
+//        make.bottom.equalTo(self.contentView.mas_bottom);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(70);
         make.centerY.equalTo(self.describeContent.mas_centerY);
     }];
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
