@@ -127,12 +127,14 @@ UICollectionViewDataSource>
 
 -(void)startLoopTimer{
     [self stopLoopTimer];
-    _loopTimer = [NSTimer timerWithTimeInterval:self.showTime
-                                         target:self
-                                       selector:@selector(loopScroll)
-                                       userInfo:nil
-                                        repeats:YES];
-    [[NSRunLoop currentRunLoop]addTimer:self.loopTimer forMode:NSRunLoopCommonModes];
+    if (self.autoPlay) {
+        _loopTimer = [NSTimer timerWithTimeInterval:self.showTime
+                                             target:self
+                                           selector:@selector(loopScroll)
+                                           userInfo:nil
+                                            repeats:YES];
+        [[NSRunLoop currentRunLoop]addTimer:self.loopTimer forMode:NSRunLoopCommonModes];
+    }
 }
 
 -(void)stopLoopTimer{
@@ -249,6 +251,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
         return;
     }
     _autoPlay = autoPlay;
+    [self stopLoopTimer];
+    [self startLoopTimer];
 }
 
 -(void)setShowTime:(NSTimeInterval)showTime{
@@ -257,9 +261,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     }
     
     if (showTime <= 0) {
-        self.autoPlay = NO;
-        return;
+        showTime = 1;
     }
     _showTime = showTime;
+    [self stopLoopTimer];
+    [self startLoopTimer];
 }
 @end
