@@ -68,6 +68,10 @@ UICollectionViewDataSource>
             make.bottom.equalTo(self).offset(-20);
             make.height.mas_equalTo(10);
         }];
+        
+        self.autoPlay = YES;
+        self.showTime = 3;
+        self.dataSource = @[];
     }
     return self;
 }
@@ -78,10 +82,19 @@ UICollectionViewDataSource>
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-    if (self.dataSource.count > 0) {
+    
+    if (self.dataSource.count > 0 && _autoPlay) {
         [self startLoopTimer];
     }else{
         [self stopLoopTimer];
+    }
+    NSIndexPath *currentIndexPath = [[self.contentView indexPathsForVisibleItems]lastObject];
+    if (self.dataSource.count > 0 &&
+        currentIndexPath &&
+        currentIndexPath.section == 0) {
+        [self.contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:kMaxSection/2]
+                                 atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                                         animated:NO];
     }
 }
 #pragma mark - 🔒private
@@ -90,7 +103,7 @@ UICollectionViewDataSource>
     // 回到中间
     NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForRow:currentIndexPath.item inSection:kMaxSection/2];
     [self.contentView scrollToItemAtIndexPath:currentIndexPathReset
-                             atScrollPosition:UICollectionViewScrollPositionNone
+                             atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                      animated:NO];
     return currentIndexPathReset;
 }
@@ -108,13 +121,13 @@ UICollectionViewDataSource>
     }
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:nextItem inSection:nextSection];
     [self.contentView scrollToItemAtIndexPath:nextIndexPath
-                             atScrollPosition:UICollectionViewScrollPositionNone
+                             atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                      animated:YES];
 }
 
 -(void)startLoopTimer{
     [self stopLoopTimer];
-    _loopTimer = [NSTimer timerWithTimeInterval:3
+    _loopTimer = [NSTimer timerWithTimeInterval:self.showTime
                                          target:self
                                        selector:@selector(loopScroll)
                                        userInfo:nil
@@ -159,6 +172,13 @@ UICollectionViewDataSource>
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (_didSelectCompletion) {
+        _didSelectCompletion(indexPath.item);
+    }
+}
+
 // UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout*)collectionViewLayout
@@ -171,7 +191,9 @@ UICollectionViewDataSource>
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self startLoopTimer];
+    if (self.autoPlay) {
+        [self startLoopTimer];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -220,5 +242,24 @@ UICollectionViewDataSource>
     _dataSource = dataSource;
     [_contentView reloadData];
     [_pageControl setNumberOfPages:dataSource.count];
+}
+
+-(void)setAutoPlay:(BOOL)autoPlay{
+    if (_autoPlay == autoPlay) {
+        return;
+    }
+    _autoPlay = autoPlay;
+}
+
+-(void)setShowTime:(NSTimeInterval)showTime{
+    if (_showTime == showTime) {
+        return;
+    }
+    
+    if (showTime <= 0) {
+        self.autoPlay = NO;
+        return;
+    }
+    _showTime = showTime;
 }
 @end

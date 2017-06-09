@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^ CTFlashViewDidSelectCompletion)(NSUInteger indext); // 被选中cell的index
+typedef void(^ CTFlashViewDidSelectCompletion)(NSUInteger index); // 被选中cell的index
 
 @interface CTFlashView : UIView
 
