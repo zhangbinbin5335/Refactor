@@ -10,10 +10,11 @@
 
 typedef void(^ CTFlashViewDidSelectCompletion)(NSUInteger index); // 被选中cell的index
 
-@interface CTFlashView : UIView
+@interface CTCycleView : UIView
 
 @property (nonatomic, strong) NSArray<NSString *> *dataSource; // 数据源,封面图片链接
 @property (nonatomic, assign) BOOL autoPlay; // default YES;
+@property (nonatomic, assign) BOOL loop; // 是否循环，default YES
 @property (nonatomic, assign) NSTimeInterval showTime; // 展示时间，default 3秒
 @property (nonatomic, copy) CTFlashViewDidSelectCompletion didSelectCompletion;
 

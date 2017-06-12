@@ -23,7 +23,6 @@
 		431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06A91EE7C913004A6AC6 /* UIView+CTFrame.m */; };
 		431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */; };
 		431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06AF1EE82984004A6AC6 /* NSString+CTTime.m */; };
-		431D06B31EE93DB2004A6AC6 /* CTFlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06B21EE93DB2004A6AC6 /* CTFlashView.m */; };
 		4323E54B1EDE641B00B25F07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E54A1EDE641B00B25F07 /* main.m */; };
 		4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5611EDE64D600B25F07 /* CTAppDelegate.m */; };
 		4323E5701EDE69E500B25F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4323E56F1EDE69E500B25F07 /* Assets.xcassets */; };
@@ -35,6 +34,7 @@
 		4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5841EE03C7F00B25F07 /* NSString+CTRandom.m */; };
 		4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */; };
 		4323E5911EE0FED200B25F07 /* NSData+CTMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */; };
+		43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43578D971EEE37F0008B0134 /* CTCycleView.m */; };
 		B8EE61D35E266E94BE6EC376 /* Pods_CalfTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E6105F64C3603981A5ED43 /* Pods_CalfTrader.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +71,6 @@
 		431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsPresenter.m; sourceTree = "<group>"; };
 		431D06AE1EE82984004A6AC6 /* NSString+CTTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CTTime.h"; sourceTree = "<group>"; };
 		431D06AF1EE82984004A6AC6 /* NSString+CTTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CTTime.m"; sourceTree = "<group>"; };
-		431D06B11EE93DB2004A6AC6 /* CTFlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFlashView.h; sourceTree = "<group>"; };
-		431D06B21EE93DB2004A6AC6 /* CTFlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFlashView.m; sourceTree = "<group>"; };
 		4323E5461EDE641B00B25F07 /* CalfTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalfTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4323E54A1EDE641B00B25F07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4323E55A1EDE641B00B25F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +93,8 @@
 		4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CTJson.m"; sourceTree = "<group>"; };
 		4323E58F1EE0FED200B25F07 /* NSData+CTMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CTMD5.h"; sourceTree = "<group>"; };
 		4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CTMD5.m"; sourceTree = "<group>"; };
+		43578D961EEE37F0008B0134 /* CTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCycleView.h; sourceTree = "<group>"; };
+		43578D971EEE37F0008B0134 /* CTCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCycleView.m; sourceTree = "<group>"; };
 		5D9A72D4DA6D7074DCB9AFF0 /* Pods-CalfTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalfTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalfTrader/Pods-CalfTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		96E6105F64C3603981A5ED43 /* Pods_CalfTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalfTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B000FAF849D2729F192B09 /* Pods-CalfTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalfTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalfTrader/Pods-CalfTrader.release.xcconfig"; sourceTree = "<group>"; };
@@ -439,8 +439,8 @@
 				431D06721EE52748004A6AC6 /* CTViewController.m */,
 				431D06691EE52609004A6AC6 /* CTRootViewController.h */,
 				431D066A1EE52609004A6AC6 /* CTRootViewController.m */,
-				431D06B11EE93DB2004A6AC6 /* CTFlashView.h */,
-				431D06B21EE93DB2004A6AC6 /* CTFlashView.m */,
+				43578D961EEE37F0008B0134 /* CTCycleView.h */,
+				43578D971EEE37F0008B0134 /* CTCycleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,13 +633,13 @@
 				431D069B1EE52C8B004A6AC6 /* CTUserController.m in Sources */,
 				431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */,
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
+				43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */,
 				431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */,
 				4323E5781EDE978F00B25F07 /* CTLocationManager.m in Sources */,
 				431D068B1EE52B4B004A6AC6 /* CTInvestmentController.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
 				431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */,
 				4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */,
-				431D06B31EE93DB2004A6AC6 /* CTFlashView.m in Sources */,
 				431D066B1EE52609004A6AC6 /* CTRootViewController.m in Sources */,
 				4323E57C1EDEB1D200B25F07 /* CTGlobalConfig.m in Sources */,
 				4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */,

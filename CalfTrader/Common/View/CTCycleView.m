@@ -6,7 +6,7 @@
 //  Copyright © 2017年 上海宏鹿. All rights reserved.
 //
 
-#import "CTFlashView.h"
+#import "CTCycleView.h"
 
 static NSString *const kCellID = @"flashViewCellID";
 CGFloat kMaxSection = 100;
@@ -41,7 +41,7 @@ CGFloat kMaxSection = 100;
 
 @end
 
-@interface CTFlashView ()
+@interface CTCycleView ()
 <UICollectionViewDelegate,
 UICollectionViewDataSource>
 
@@ -51,7 +51,7 @@ UICollectionViewDataSource>
 
 @end
 
-@implementation CTFlashView
+@implementation CTCycleView
 
 #pragma mark - ♻️life cycle
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -72,6 +72,7 @@ UICollectionViewDataSource>
         self.autoPlay = YES;
         self.showTime = 3;
         self.dataSource = @[];
+        self.loop = YES;
     }
     return self;
 }
@@ -91,7 +92,8 @@ UICollectionViewDataSource>
     NSIndexPath *currentIndexPath = [[self.contentView indexPathsForVisibleItems]lastObject];
     if (self.dataSource.count > 0 &&
         currentIndexPath &&
-        currentIndexPath.section == 0) {
+        currentIndexPath.section == 0 &&
+        self.loop) {
         [self.contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:kMaxSection/2]
                                  atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                          animated:NO];
@@ -108,6 +110,9 @@ UICollectionViewDataSource>
     return currentIndexPathReset;
 }
 -(void)loopScroll{
+    if (!self.loop) {
+        return;
+    }
     // 这个循环播放赌的就是用户不会手动滚动kMaxSection／2 = 50次（组）广告;
     // 如果有脑残用户真的自己滑动看了50组一样的广告，那就没办法了。
     NSIndexPath *currentIndexPathReset = [self resetIndexPath];
@@ -154,7 +159,11 @@ UICollectionViewDataSource>
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return kMaxSection;
+    if (self.loop) {
+        return kMaxSection;
+    }
+    
+    return 1;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -266,5 +275,13 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     _showTime = showTime;
     [self stopLoopTimer];
     [self startLoopTimer];
+}
+
+-(void)setLoop:(BOOL)loop{
+    if (_loop == loop) {
+        return;
+    }
+    _loop = loop;
+    [_contentView reloadData];
 }
 @end
