@@ -89,12 +89,11 @@ UICollectionViewDataSource>
     }else{
         [self stopLoopTimer];
     }
-    NSIndexPath *currentIndexPath = [[self.contentView indexPathsForVisibleItems]lastObject];
+    
     if (self.dataSource.count > 0 &&
-        currentIndexPath &&
-        currentIndexPath.section == 0 &&
-        self.loop) {
-        [self.contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:kMaxSection/2]
+        self.contentView.contentOffset.x == 0) {
+        [self.contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0
+                                                                     inSection:self.contentView.numberOfSections/2]
                                  atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                          animated:NO];
     }
@@ -169,6 +168,10 @@ UICollectionViewDataSource>
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (_cellAtIndexPath) {
+        return _cellAtIndexPath(indexPath, collectionView);
+    }
+    
     CTFlashViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellID
                                                                       forIndexPath:indexPath];
     if (!cell) {

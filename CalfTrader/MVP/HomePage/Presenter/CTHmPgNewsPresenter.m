@@ -53,6 +53,7 @@
                                parameters:parameters
                                completion:^(id response, NSError *error) {
                                    CTNLog(@"首页轮播数据 = %@",response);
+                                   completion(response, error);
                                }
      ];
 }
