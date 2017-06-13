@@ -9,6 +9,8 @@
 #import "CTCycleView.h"
 
 static NSString *const kCellID = @"flashViewCellID";
+static NSString *const kOverCellID = @"overFlashViewCellID";
+
 CGFloat kMaxSection = 100;
 
 @interface CTFlashViewCell : UICollectionViewCell
@@ -150,6 +152,10 @@ UICollectionViewDataSource>
 #pragma mark - 🔄overwrite
 
 #pragma mark - 🚪public
+-(void)registerClass:(Class)cellClass{
+    [_contentView registerClass:cellClass
+     forCellWithReuseIdentifier:kOverCellID];
+}
 
 #pragma mark -- delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView
@@ -169,7 +175,7 @@ UICollectionViewDataSource>
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (_cellAtIndexPath) {
-        return _cellAtIndexPath(indexPath, collectionView);
+        return _cellAtIndexPath(indexPath, collectionView, kOverCellID);
     }
     
     CTFlashViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellID
@@ -197,6 +203,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout*)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (_itemSize) {
+        return _itemSize(self);
+    }
     return CGSizeMake(collectionView.ct_width, collectionView.ct_height);
 }
 
@@ -256,6 +265,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     _dataSource = dataSource;
     [_contentView reloadData];
     [_pageControl setNumberOfPages:dataSource.count];
+    [self stopLoopTimer];
+    [self startLoopTimer];
 }
 
 -(void)setAutoPlay:(BOOL)autoPlay{
@@ -287,4 +298,13 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     _loop = loop;
     [_contentView reloadData];
 }
+
+-(void)setPageHide:(BOOL)pageHide{
+    if (_pageHide == pageHide) {
+        return;
+    }
+    
+    _pageControl.hidden = pageHide;
+}
+
 @end

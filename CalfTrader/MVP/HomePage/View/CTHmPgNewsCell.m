@@ -10,7 +10,7 @@
 #import "NSString+CTTime.h"
 
 static NSString *kCTHmPgNewsCellID = @"CTHmPgNewsCellID";
-const CGFloat kOffSet = 10;
+static const CGFloat kOffSet = 10;
 
 @interface CTHmPgNewsCell ()
 

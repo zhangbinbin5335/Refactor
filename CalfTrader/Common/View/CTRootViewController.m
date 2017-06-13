@@ -48,10 +48,12 @@
     CTUserController *userController = [[CTUserController alloc]init];
     userController.tabBarItem = [self tabBarItemWithTitle:@"我的"];
     
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:discoverController];
+    
     self.viewControllers = @[homePageController,
                              quotationController,
                              investmentController,
-                             discoverController,
+                             nav,
                              userController];
     self.tabBar.backgroundColor = [UIColor whiteColor];
     

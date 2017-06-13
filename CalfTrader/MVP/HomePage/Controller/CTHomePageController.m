@@ -10,6 +10,7 @@
 #import "CTHmPgNewsCell.h"
 #import "CTHmPgNewsPresenter.h"
 #import "CTCycleView.h"
+#import "CTHmToolCell.h"
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
@@ -17,7 +18,7 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *newsTableView; // 新闻展示
 @property (nonatomic, strong) CTCycleView *flashView; // 顶部轮播view
-@property (nonatomic, strong) CTCycleView *toolView; // 顶部轮播view
+@property (nonatomic, strong) CTCycleView *toolView; // 顶部tool view
 @property (nonatomic, strong) CTHmPgNewsPresenter *presenter;
 
 @end
@@ -32,17 +33,37 @@ UITableViewDataSource>
     [self initSubViews];
     [self requestNewsInfo];
 }
-
 #pragma mark - 🔒private
 -(void)initSubViews{
     [self.view addSubview:self.newsTableView];
-    self.newsTableView.tableHeaderView = self.flashView;
-    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
     
+    UIView *tableHeaderView = [self configTableHeaderView];
+    self.newsTableView.tableHeaderView = tableHeaderView;
+    
+    __weak typeof(self) weakSelf = self;
     [self.newsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(-44);
+        make.top.left.right.equalTo(weakSelf.view);
+        make.bottom.equalTo(weakSelf.view).offset(-44);
     }];
+}
+
+-(UIView *)configTableHeaderView{
+    UIView *tableHeaderView = [[UIView alloc]init];
+    
+    [tableHeaderView addSubview:self.flashView];
+    [tableHeaderView addSubview:self.toolView];
+    
+    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
+    self.toolView.frame = CGRectMake(0, 200, self.view.ct_width, 100);
+    tableHeaderView.frame = CGRectMake(0, 0, self.view.ct_width, 300);
+    
+    self.toolView.itemSize = ^(CTCycleView *cycleView){
+        CGFloat width = cycleView.ct_width;
+        return CGSizeMake((width - 0) / 4., (width - 0) / 4.);
+    };
+    self.toolView.dataSource = @[@"",@"",@"",@""];
+    
+    return tableHeaderView;
 }
 
 -(void)requestNewsInfo{
@@ -120,6 +141,28 @@ UITableViewDataSource>
     }
     
     return _flashView;
+}
+
+-(CTCycleView *)toolView{
+    if (!_toolView) {
+        _toolView = [[CTCycleView alloc] init];
+        _toolView.loop = NO;
+        _toolView.pageHide = YES;
+        [_toolView registerClass:[CTHmToolCell class]];
+        _toolView.cellAtIndexPath = ^UICollectionViewCell *(NSIndexPath *indexPath,
+                                                            UICollectionView *collectionView,
+                                                            NSString *cellID) {
+            CTHmToolCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
+                                                                           forIndexPath:indexPath];
+            if (!cell) {
+                cell = [[CTHmToolCell alloc]init];
+            }
+            
+            return cell;
+        };
+    }
+    
+    return _toolView;
 }
 
 -(CTHmPgNewsPresenter *)presenter{

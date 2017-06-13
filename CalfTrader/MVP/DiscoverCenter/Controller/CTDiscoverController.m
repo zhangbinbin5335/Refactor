@@ -7,6 +7,7 @@
 //
 
 #import "CTDiscoverController.h"
+#import <EventKit/EventKit.h>
 
 @interface CTDiscoverController ()
 
@@ -18,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImage *navbarBgImage = [UIImage imageNamed:@"navbar_background"];
+    UIImage *newImage = [navbarBgImage resizableImageWithCapInsets:UIEdgeInsetsMake(0,
+                                                                                    navbarBgImage.size.width/2. - 10,
+                                                                                    0,
+                                                                                    navbarBgImage.size.width/2.-10)];
+    [self.navigationController.navigationBar setBackgroundImage:newImage
+                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark - 🔒private
