@@ -10,7 +10,7 @@
 #import "CTHmPgNewsCell.h"
 #import "CTHmPgNewsPresenter.h"
 #import "CTCycleView.h"
-#import "CTHmToolCell.h"
+#import "CTHmBannerCell.h"
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
@@ -18,7 +18,7 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *newsTableView; // 新闻展示
 @property (nonatomic, strong) CTCycleView *flashView; // 顶部轮播view
-@property (nonatomic, strong) CTCycleView *toolView; // 顶部tool view
+@property (nonatomic, strong) CTCycleView *bannerView; // 顶部tool view
 @property (nonatomic, strong) CTHmPgNewsPresenter *presenter;
 
 @end
@@ -32,6 +32,8 @@ UITableViewDataSource>
     
     [self initSubViews];
     [self requestNewsInfo];
+    [self requestFlashViewInfo];
+    [self requestBannerInfo];
 }
 #pragma mark - 🔒private
 -(void)initSubViews{
@@ -51,17 +53,17 @@ UITableViewDataSource>
     UIView *tableHeaderView = [[UIView alloc]init];
     
     [tableHeaderView addSubview:self.flashView];
-    [tableHeaderView addSubview:self.toolView];
+    [tableHeaderView addSubview:self.bannerView];
+    
+    CGFloat bannerWidth = self.view.ct_width / 4.;
     
     self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
-    self.toolView.frame = CGRectMake(0, 200, self.view.ct_width, 100);
-    tableHeaderView.frame = CGRectMake(0, 0, self.view.ct_width, 300);
+    self.bannerView.frame = CGRectMake(0, 200, self.view.ct_width, bannerWidth);
+    tableHeaderView.frame = CGRectMake(0, 0, self.view.ct_width, 200 + bannerWidth);
     
-    self.toolView.itemSize = ^(CTCycleView *cycleView){
-        CGFloat width = cycleView.ct_width;
-        return CGSizeMake((width - 0) / 4., (width - 0) / 4.);
+    self.bannerView.itemSize = ^(CTCycleView *cycleView){
+        return CGSizeMake(bannerWidth, bannerWidth);
     };
-    self.toolView.dataSource = @[@"",@"",@"",@""];
     
     return tableHeaderView;
 }
@@ -76,10 +78,20 @@ UITableViewDataSource>
     }];
 }
 
+-(void)requestBannerInfo{
+    typeof(self) weakSelf = self;
+    
+    [self.presenter requestBannerInfoCompletion:^(NSArray *response, NSError *error) {
+        if (!error) {
+            weakSelf.bannerView.dataSource = response;
+        }
+    }];
+}
+
 -(void)requestFlashViewInfo{
     typeof(self) weakSelf = self;
     
-    [self.presenter requestFlashViewInfoCompltion:^(id response, NSError *error) {
+    [self.presenter requestFlashViewInfoCompletion:^(id response, NSError *error) {
         weakSelf.flashView.dataSource = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933469041&di=5c0f77e9c47025370a8d83aeebba872e&imgtype=0&src=http%3A%2F%2Fwww.liangtupian.com%2Fuploads%2Fmv%2F20150416%2F2015041622073712228.jpg",
                                           @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933470203&di=12c9280476a1dd65fd6c170fc3c5525a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2F3%2Fe9%2F72821378027.jpg",
                                           @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496933470202&di=139c6281531319f29c90a616f694aed7&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2015%2F150%2F35%2F542TBW786509.jpg"];
@@ -110,7 +122,6 @@ UITableViewDataSource>
 }
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self requestFlashViewInfo];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -143,26 +154,26 @@ UITableViewDataSource>
     return _flashView;
 }
 
--(CTCycleView *)toolView{
-    if (!_toolView) {
-        _toolView = [[CTCycleView alloc] init];
-        _toolView.loop = NO;
-        _toolView.pageHide = YES;
-        [_toolView registerClass:[CTHmToolCell class]];
-        _toolView.cellAtIndexPath = ^UICollectionViewCell *(NSIndexPath *indexPath,
+-(CTCycleView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [[CTCycleView alloc] init];
+        _bannerView.loop = NO;
+        _bannerView.pageHide = YES;
+        [_bannerView registerClass:[CTHmBannerCell class]];
+        _bannerView.cellAtIndexPath = ^UICollectionViewCell *(NSIndexPath *indexPath,
                                                             UICollectionView *collectionView,
                                                             NSString *cellID) {
-            CTHmToolCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
+            CTHmBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
                                                                            forIndexPath:indexPath];
             if (!cell) {
-                cell = [[CTHmToolCell alloc]init];
+                cell = [[CTHmBannerCell alloc]init];
             }
             
             return cell;
         };
     }
     
-    return _toolView;
+    return _bannerView;
 }
 
 -(CTHmPgNewsPresenter *)presenter{

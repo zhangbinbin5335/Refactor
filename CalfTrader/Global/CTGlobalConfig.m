@@ -10,7 +10,7 @@
 
 // 服务器地址
 #if DEBUG
-NSString *const CTBaseUrl = @"http://101.37.33.121/";
+NSString *const CTBaseUrl = @"http://new.xnsudai.com/";//@"http://101.37.33.121/";
 #else
 NSString *const CTBaseUrl = @"http://new.xnsudai.com/";
 #endif
@@ -21,6 +21,8 @@ NSString *const CTAPPExitApi = @"calfTrader-systemCenter-web/admin/iosAuditApi/F
 // homepage
 // 新闻
 NSString *const CTHmPgNewsInfo = @"calfTrader-communityCenter-api/information/listInf.do";
+// banaer info
+NSString *const CTHmPgBannerInfo =  @"calfTrader-systemCenter-web/admin/homeIconApi/list.do";
 // 轮播数据
 NSString *const CTHmFlashViewInfo = @"calfTrader-communityCenter-api/information/informationColumnBanNew.do";
 // NSUserDefaults 存储对应的key

@@ -18,6 +18,8 @@ extern NSString *const CTAPPExitApi;
 
 // homepage
 extern NSString *const CTHmPgNewsInfo;
+// banaer info
+extern NSString *const CTHmPgBannerInfo;
 // 轮播数据
 extern NSString *const CTHmFlashViewInfo;
 

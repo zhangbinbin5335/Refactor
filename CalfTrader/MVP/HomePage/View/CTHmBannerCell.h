@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CTCycleView.h"
 
-@interface CTHmToolCell : UICollectionViewCell
+@interface CTHmBannerCell : UICollectionViewCell<CTCyleViewCellDelegate>
 
 @end

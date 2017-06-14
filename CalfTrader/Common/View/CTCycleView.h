@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CTCyleViewCellDelegate <NSObject>
+
+@required
+-(void)fillData:(id)data;
+
+@end
+
 @class CTCycleView;
 typedef void(^ CTCycleViewDidSelectCompletion)(NSUInteger index); // 被选中cell的index
-typedef UICollectionViewCell *(^ CTCycleViewCellAtIndexPath)(NSIndexPath *indexPath,
+typedef UICollectionViewCell<CTCyleViewCellDelegate> *(^ CTCycleViewCellAtIndexPath)(NSIndexPath *indexPath,
                                                             UICollectionView *collectionView,
                                                             NSString *cellID); // 自定义cell
 typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
@@ -42,6 +49,6 @@ typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
 
  @param cellClass cellClass
  */
--(void)registerClass:(Class)cellClass;
+-(void)registerClass:(Class<CTCyleViewCellDelegate>)cellClass;
 
 @end

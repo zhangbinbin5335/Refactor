@@ -175,7 +175,10 @@ UICollectionViewDataSource>
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (_cellAtIndexPath) {
-        return _cellAtIndexPath(indexPath, collectionView, kOverCellID);
+        UICollectionViewCell<CTCyleViewCellDelegate> *cell = _cellAtIndexPath(indexPath, collectionView, kOverCellID);
+        [cell fillData:self.dataSource[indexPath.item]];
+        
+        return cell;
     }
     
     CTFlashViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellID

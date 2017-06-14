@@ -6,18 +6,19 @@
 //  Copyright © 2017年 上海宏鹿. All rights reserved.
 //
 
-#import "CTHmToolCell.h"
+#import "CTHmBannerCell.h"
+#import "CTHmPgBannerModel.h"
 
 static const CGFloat kOffSet = 10;
 
-@interface CTHmToolCell ()
+@interface CTHmBannerCell ()
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
-@implementation CTHmToolCell
+@implementation CTHmBannerCell
 
 #pragma mark -- life cycle
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -56,6 +57,7 @@ static const CGFloat kOffSet = 10;
                                              textColor:[UIColor blackColor]
                                                   font:[UIFont systemFontOfSize:16]];
         _titleLabel.text = @"xxxxxaaa";
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
     
     return _titleLabel;
@@ -64,12 +66,17 @@ static const CGFloat kOffSet = 10;
 -(UIImageView *)imageView{
     if (!_imageView) {
         _imageView = [[UIImageView alloc] init];
-        _imageView.backgroundColor = [UIColor yellowColor];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     
     return _imageView;
 }
 #pragma mark -- public
-
+-(void)fillData:(id)data{
+    CTHmPgBannerModel *model = (CTHmPgBannerModel*)data;
+    
+    [self.imageView sd_setImageWithURL:model.imageUrl];
+    self.titleLabel.text = model.title;
+}
 
 @end

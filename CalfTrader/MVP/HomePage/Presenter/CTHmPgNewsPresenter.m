@@ -43,7 +43,7 @@
      ];
 }
 
--(void)requestFlashViewInfoCompltion:(CTHmPgPresenterCompletion)completion{
+-(void)requestFlashViewInfoCompletion:(CTHmPgPresenterCompletion)completion{
     // TODO : 获取用户ID
     NSString *customerID = @"";
     NSDictionary *parameters = @{@"customerId":customerID};
@@ -54,6 +54,33 @@
                                completion:^(id response, NSError *error) {
                                    CTNLog(@"首页轮播数据 = %@",response);
                                    completion(response, error);
+                               }
+     ];
+}
+
+-(void)requestBannerInfoCompletion:(CTHmPgPresenterCompletion)completion{
+    // TODO : 获取用户phone num
+    NSString *phoneNum = @"";
+    NSDictionary *parameters = @{@"phone":phoneNum};
+    
+    [[CTNetworkManager sharedManager]post:CTBaseUrl
+                                urlString:CTHmPgBannerInfo
+                               parameters:parameters
+                               encryption:YES
+                               completion:^(id response, NSError *error) {
+                                   CTNLog(@"获取用户phone num = %@",response);
+                                   if (error) {
+                                       completion(nil, error);
+                                   }else{
+                                       NSMutableArray *dataArray = response[@"data"][@"data"];
+                                       NSMutableArray *modelArray = [[NSMutableArray alloc]init];
+                                       for (NSDictionary *info in dataArray) {
+                                           CTHmPgBannerModel *model = [CTHmPgBannerModel yy_modelWithDictionary:info];
+                                           [modelArray addObject:model];
+                                       }
+                                       
+                                       completion([modelArray copy], nil);
+                                   }
                                }
      ];
 }
