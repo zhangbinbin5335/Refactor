@@ -13,6 +13,7 @@
 #import "CTInvestmentController.h"
 #import "CTDiscoverController.h"
 #import "CTUserController.h"
+#import "CTNavigationController.h"
 
 @interface CTRootViewController ()<UITabBarDelegate>
 // tabbar item下划线
@@ -29,7 +30,9 @@
     // 设置viewControllers
     // Homepage
     CTHomePageController *homePageController = [[CTHomePageController alloc]init];
-    homePageController.tabBarItem = [self tabBarItemWithTitle:@"首页"];
+    CTNavigationController *homePageNavController = [[CTNavigationController alloc]
+                                                     initWithRootViewController:homePageController];
+    homePageNavController.tabBarItem = [self tabBarItemWithTitle:@"首页"];
     // 行情
     CTQuotationController *quotationController = [[CTQuotationController alloc]init];
     quotationController.tabBarItem = [self tabBarItemWithTitle:@"行情"];
@@ -48,12 +51,10 @@
     CTUserController *userController = [[CTUserController alloc]init];
     userController.tabBarItem = [self tabBarItemWithTitle:@"我的"];
     
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:discoverController];
-    
-    self.viewControllers = @[homePageController,
+    self.viewControllers = @[homePageNavController,
                              quotationController,
                              investmentController,
-                             nav,
+                             discoverController,
                              userController];
     self.tabBar.backgroundColor = [UIColor whiteColor];
     

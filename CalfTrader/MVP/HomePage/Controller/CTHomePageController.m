@@ -8,10 +8,13 @@
 
 #import "CTHomePageController.h"
 #import "CTHmPgNewsCell.h"
-#import "CTHmPgNewsPresenter.h"
 #import "CTCycleView.h"
 #import "CTHmBannerCell.h"
 #import "CTHmPgMarketCell.h"
+/* presenter */
+#import "CTHmPgNewsPresenter.h"
+/* vc */
+#import "CTHmPgNewsDetailVC.h"
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
@@ -29,6 +32,17 @@ UITableViewDataSource>
 @implementation CTHomePageController
 
 #pragma mark - ♻️life cycle
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self startLoopRequestMarketInfo:1];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.navigationController setNavigationBarHidden:NO];
+    [self stopLoopRequestMarketInfo];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -184,6 +198,14 @@ UITableViewDataSource>
 }
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    // 跳转新闻详情页
+    CTHmPgNewsModel *newsModel = self.presenter.newsInfo[indexPath.row];
+    CTHmPgNewsDetailVC *newsDetailVC = [[CTHmPgNewsDetailVC alloc]init];
+    newsDetailVC.newsModel = newsModel;
+    newsDetailVC.title = @"消息详情";
+    newsDetailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:newsDetailVC animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{

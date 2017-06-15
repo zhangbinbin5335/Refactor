@@ -39,6 +39,8 @@
 		43CC88AF1EF161AC0020B024 /* CTHmPgBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88AE1EF161AC0020B024 /* CTHmPgBannerModel.m */; };
 		43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B11EF255450020B024 /* CTHmPgMarketCell.m */; };
 		43CC88B51EF25AAD0020B024 /* CTHmPgMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B41EF25AAD0020B024 /* CTHmPgMarketModel.m */; };
+		43CC88B81EF2B3610020B024 /* CTHmPgNewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B71EF2B3610020B024 /* CTHmPgNewsDetailVC.m */; };
+		43CC88BB1EF2B48D0020B024 /* CTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88BA1EF2B48D0020B024 /* CTNavigationController.m */; };
 		B8EE61D35E266E94BE6EC376 /* Pods_CalfTrader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E6105F64C3603981A5ED43 /* Pods_CalfTrader.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,10 @@
 		43CC88B11EF255450020B024 /* CTHmPgMarketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgMarketCell.m; sourceTree = "<group>"; };
 		43CC88B31EF25AAD0020B024 /* CTHmPgMarketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgMarketModel.h; sourceTree = "<group>"; };
 		43CC88B41EF25AAD0020B024 /* CTHmPgMarketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgMarketModel.m; sourceTree = "<group>"; };
+		43CC88B61EF2B3610020B024 /* CTHmPgNewsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsDetailVC.h; sourceTree = "<group>"; };
+		43CC88B71EF2B3610020B024 /* CTHmPgNewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailVC.m; sourceTree = "<group>"; };
+		43CC88B91EF2B48D0020B024 /* CTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNavigationController.h; sourceTree = "<group>"; };
+		43CC88BA1EF2B48D0020B024 /* CTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNavigationController.m; sourceTree = "<group>"; };
 		5D9A72D4DA6D7074DCB9AFF0 /* Pods-CalfTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalfTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalfTrader/Pods-CalfTrader.debug.xcconfig"; sourceTree = "<group>"; };
 		96E6105F64C3603981A5ED43 /* Pods_CalfTrader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalfTrader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B000FAF849D2729F192B09 /* Pods-CalfTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalfTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalfTrader/Pods-CalfTrader.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 			children = (
 				431D06741EE52760004A6AC6 /* CTHomePageController.h */,
 				431D06751EE52760004A6AC6 /* CTHomePageController.m */,
+				43CC88B61EF2B3610020B024 /* CTHmPgNewsDetailVC.h */,
+				43CC88B71EF2B3610020B024 /* CTHmPgNewsDetailVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -457,6 +465,8 @@
 				431D06671EE50344004A6AC6 /* CTTabBarController.m */,
 				431D06711EE52748004A6AC6 /* CTViewController.h */,
 				431D06721EE52748004A6AC6 /* CTViewController.m */,
+				43CC88B91EF2B48D0020B024 /* CTNavigationController.h */,
+				43CC88BA1EF2B48D0020B024 /* CTNavigationController.m */,
 				431D06691EE52609004A6AC6 /* CTRootViewController.h */,
 				431D066A1EE52609004A6AC6 /* CTRootViewController.m */,
 				43578D961EEE37F0008B0134 /* CTCycleView.h */,
@@ -667,6 +677,7 @@
 				4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */,
 				431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */,
 				431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */,
+				43CC88B81EF2B3610020B024 /* CTHmPgNewsDetailVC.m in Sources */,
 				4323E54B1EDE641B00B25F07 /* main.m in Sources */,
 				4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */,
 				431D06761EE52760004A6AC6 /* CTHomePageController.m in Sources */,
@@ -674,6 +685,7 @@
 				43CC88B51EF25AAD0020B024 /* CTHmPgMarketModel.m in Sources */,
 				43CC88AA1EF011290020B024 /* CTHmBannerCell.m in Sources */,
 				431D06681EE50344004A6AC6 /* CTTabBarController.m in Sources */,
+				43CC88BB1EF2B48D0020B024 /* CTNavigationController.m in Sources */,
 				431D06731EE52748004A6AC6 /* CTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
