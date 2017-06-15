@@ -140,6 +140,7 @@ UITableViewDataSource>
                                                        selector:@selector(requesetMarketInfo)
                                                        userInfo:nil
                                                         repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:_loopRequestTimer forMode:NSRunLoopCommonModes];
 }
 
 -(void)stopLoopRequestMarketInfo{
