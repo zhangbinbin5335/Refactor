@@ -12,6 +12,11 @@
 
 #pragma mark - ☸getter and setter
 -(NSURL *)imageUrl{
+    
+    if (_imageUrl) {
+        return _imageUrl;
+    }
+    
     if (_image) {
         return [NSURL URLWithString:_image];
     }

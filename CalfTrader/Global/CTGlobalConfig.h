@@ -22,6 +22,9 @@ extern NSString *const CTHmPgNewsInfo;
 extern NSString *const CTHmPgBannerInfo;
 // 轮播数据
 extern NSString *const CTHmFlashViewInfo;
+// market 信息
+extern NSString *const CTHmPgMarketParametr; // 先去取得CTHmPgMarketInfo请求参数
+extern NSString *const CTHmPgMarketInfo;
 
 // NSUserDefaults 存储对应的key
 extern NSString *const CTNULastVersionNum;

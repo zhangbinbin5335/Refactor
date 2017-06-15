@@ -223,7 +223,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    int page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.dataSource.count;
+    int page = 0;
+    if (self.dataSource.count == 0) {
+        self.pageControl.currentPage = page;
+        return;
+    }
+    page = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width + 0.5) % self.dataSource.count;
     self.pageControl.currentPage = page;
 }
 #pragma mark - ☸getter and setter
@@ -246,6 +251,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
         _contentView.showsHorizontalScrollIndicator = NO;
         _contentView.pagingEnabled = YES;
         _contentView.backgroundColor = [UIColor whiteColor];
+        
+        _flowLayout = flowLayout;
     }
     
     return _contentView;
@@ -308,6 +315,18 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     }
     
     _pageControl.hidden = pageHide;
+}
+
+-(void)setBackgroundColor:(UIColor *)backgroundColor{
+    _contentView.backgroundColor = backgroundColor;
+}
+
+-(void)setFlowLayout:(UICollectionViewFlowLayout *)flowLayout{
+    if ([_flowLayout isEqual:flowLayout]) {
+        return;
+    }
+    _contentView.collectionViewLayout = _flowLayout;
+    [_contentView reloadData];
 }
 
 @end

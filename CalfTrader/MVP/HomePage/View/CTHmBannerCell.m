@@ -31,6 +31,8 @@ static const CGFloat kOffSet = 10;
 }
 #pragma mark -- private
 -(void)setupSubViews{
+    self.backgroundColor = [UIColor whiteColor];
+//    self.layer.cornerRadius = 10;
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.imageView];
 }

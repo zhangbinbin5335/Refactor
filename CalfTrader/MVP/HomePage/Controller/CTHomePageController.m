@@ -11,6 +11,7 @@
 #import "CTHmPgNewsPresenter.h"
 #import "CTCycleView.h"
 #import "CTHmBannerCell.h"
+#import "CTHmPgMarketCell.h"
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
@@ -18,8 +19,10 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *newsTableView; // 新闻展示
 @property (nonatomic, strong) CTCycleView *flashView; // 顶部轮播view
-@property (nonatomic, strong) CTCycleView *bannerView; // 顶部tool view
+@property (nonatomic, strong) CTCycleView *bannerView; // 顶部banner view
+@property (nonatomic, strong) CTCycleView *marketView; // 顶部市场信息view
 @property (nonatomic, strong) CTHmPgNewsPresenter *presenter;
+@property (nonatomic, strong) NSTimer *loopRequestTimer;
 
 @end
 
@@ -34,6 +37,14 @@ UITableViewDataSource>
     [self requestNewsInfo];
     [self requestFlashViewInfo];
     [self requestBannerInfo];
+    [self requesetMarketInfo];
+    
+    // 每隔一秒刷新market数据
+    [self startLoopRequestMarketInfo:1];
+}
+
+-(void)dealloc{
+    [self stopLoopRequestMarketInfo];
 }
 #pragma mark - 🔒private
 -(void)initSubViews{
@@ -54,16 +65,37 @@ UITableViewDataSource>
     
     [tableHeaderView addSubview:self.flashView];
     [tableHeaderView addSubview:self.bannerView];
+    [tableHeaderView addSubview:self.marketView];
     
-    CGFloat bannerWidth = self.view.ct_width / 4.;
+    CGFloat bannerWidth = (self.view.ct_width) / 4.;
     
-    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
-    self.bannerView.frame = CGRectMake(0, 200, self.view.ct_width, bannerWidth);
-    tableHeaderView.frame = CGRectMake(0, 0, self.view.ct_width, 200 + bannerWidth);
+    CGFloat marketItemSpace = 5;
+    CGFloat marketHSpace = 20;
+    CGFloat marketWidth = (self.view.ct_width - marketItemSpace * 4 - 30) / 3.;
+    self.marketView.flowLayout.minimumLineSpacing = marketItemSpace;
+    self.marketView.flowLayout.footerReferenceSize = CGSizeMake(marketItemSpace,
+                                                                marketWidth - marketHSpace);
+    self.marketView.flowLayout.headerReferenceSize = CGSizeMake(marketItemSpace,
+                                                                marketWidth - marketHSpace);
     
     self.bannerView.itemSize = ^(CTCycleView *cycleView){
         return CGSizeMake(bannerWidth, bannerWidth);
     };
+    
+    self.marketView.itemSize = ^CGSize(CTCycleView *cycleView) {
+        return CGSizeMake(marketWidth, marketWidth - marketHSpace);
+    };
+    
+    self.flashView.frame = CGRectMake(0, 0, self.view.ct_width, 200);
+    self.bannerView.frame = CGRectMake(0, 200, self.view.ct_width, bannerWidth);
+    self.marketView.frame = CGRectMake(0,
+                                       CGRectGetMaxY(self.bannerView.frame),
+                                       self.view.ct_width,
+                                       marketWidth);
+    tableHeaderView.frame = CGRectMake(0,
+                                       0,
+                                       self.view.ct_width,
+                                       self.marketView.ct_y + self.marketView.ct_height);
     
     return tableHeaderView;
 }
@@ -86,6 +118,35 @@ UITableViewDataSource>
             weakSelf.bannerView.dataSource = response;
         }
     }];
+}
+
+-(void)requesetMarketInfo{
+    typeof(self) weakSelf = self;
+    
+    [self.presenter requesetMarketInfoCompletion:^(NSArray *response, NSError *error) {
+        if (!error) {
+            weakSelf.marketView.dataSource = response;
+        }
+    }];
+}
+
+-(void)startLoopRequestMarketInfo:(NSTimeInterval)timeInterval{
+    if (_loopRequestTimer) {
+        [_loopRequestTimer invalidate];
+        _loopRequestTimer = nil;
+    }
+    _loopRequestTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval
+                                                         target:self
+                                                       selector:@selector(requesetMarketInfo)
+                                                       userInfo:nil
+                                                        repeats:YES];
+}
+
+-(void)stopLoopRequestMarketInfo{
+    if (_loopRequestTimer) {
+        [_loopRequestTimer invalidate];
+        _loopRequestTimer = nil;
+    }
 }
 
 -(void)requestFlashViewInfo{
@@ -168,12 +229,33 @@ UITableViewDataSource>
             if (!cell) {
                 cell = [[CTHmBannerCell alloc]init];
             }
-            
             return cell;
         };
     }
     
     return _bannerView;
+}
+
+-(CTCycleView *)marketView{
+    if (!_marketView) {
+        _marketView = [[CTCycleView alloc] init];
+        _marketView.loop = NO;
+        _marketView.pageHide = YES;
+        _marketView.backgroundColor = [UIColor lightGrayColor];
+        [_marketView registerClass:[CTHmPgMarketCell class]];
+        _marketView.cellAtIndexPath = ^UICollectionViewCell *(NSIndexPath *indexPath,
+                                                              UICollectionView *collectionView,
+                                                              NSString *cellID) {
+            CTHmPgMarketCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID
+                                                                               forIndexPath:indexPath];
+            if (!cell) {
+                cell = [[CTHmPgMarketCell alloc]init];
+            }
+            return cell;
+        };
+    }
+    
+    return _marketView;
 }
 
 -(CTHmPgNewsPresenter *)presenter{

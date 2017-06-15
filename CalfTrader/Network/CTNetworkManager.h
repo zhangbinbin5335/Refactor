@@ -48,13 +48,17 @@ completion:(CTNetworkManagerCompletion)completion;
 parameters:(id)parameters
 completion:(CTNetworkManagerCompletion)completion;
 
+
 /**
+ post request
+
  @param encryption 参数是否加密(DES加密)
+ @return task
  */
--(void)post:(NSString*)baseUrl
- urlString:(NSString*)urlString
-parameters:(id)parameters
-encryption:(BOOL)encryption
-completion:(CTNetworkManagerCompletion)completion;
+-(NSURLSessionDataTask *)post:(NSString*)baseUrl
+                    urlString:(NSString*)urlString
+                   parameters:(id)parameters
+                   encryption:(BOOL)encryption
+                   completion:(CTNetworkManagerCompletion)completion;
 
 @end

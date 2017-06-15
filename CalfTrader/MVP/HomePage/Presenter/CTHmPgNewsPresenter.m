@@ -8,11 +8,37 @@
 
 #import "CTHmPgNewsPresenter.h"
 
+@interface CTHmPgNewsPresenter ()
+
+@property (nonatomic, strong) NSArray *preMarketInfoArray;
+@property (nonatomic, strong) NSArray *marketInfoArray;
+@property (nonatomic, strong) NSURLSessionDataTask *preTask;
+
+@end
+
 @implementation CTHmPgNewsPresenter
 
 #pragma mark - ♻️life cycle
 
 #pragma mark - 🔒private
+-(void)checkMarketPriceIncrease:(CTHmPgMarketModel*)model{
+    for (CTHmPgMarketModel *preModel in self.preMarketInfoArray) {
+        if ([model.investProductId isEqualToString:preModel.investProductId]) {
+            if (preModel.todayPrice.floatValue >
+                model.todayPrice.floatValue &&
+                preModel) {
+                model.increase = 1;
+            }else if (preModel.todayPrice.floatValue <
+                      model.todayPrice.floatValue &&
+                      preModel){
+                model.increase = -1;
+            }else{
+                model.increase = 0;
+            }
+            break;
+        }
+    }
+}
 
 #pragma mark - 🔄overwrite
 
@@ -68,7 +94,7 @@
                                parameters:parameters
                                encryption:YES
                                completion:^(id response, NSError *error) {
-                                   CTNLog(@"获取用户phone num = %@",response);
+                                   CTNLog(@"获取用户 done");
                                    if (error) {
                                        completion(nil, error);
                                    }else{
@@ -83,6 +109,67 @@
                                    }
                                }
      ];
+}
+
+-(void)requesetMarketInfoCompletion:(CTHmPgPresenterCompletion)completion{
+    if (self.preTask &&
+        self.preTask.state == NSURLSessionTaskStateRunning) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    // TODO : 获取用户phone num
+    NSString *phoneNum = @"";
+    // 先去请求参数
+    self.preTask = [[CTNetworkManager sharedManager]post:CTBaseUrl
+                                    urlString:CTHmPgMarketParametr
+                                   parameters:@{@"mobile" : phoneNum}
+                                   encryption:YES
+                                   completion:^(id response, NSError *error) {
+                                       NSArray *orderArray = response[@"data"][@"order"];
+                                       NSDictionary *parameters = @{@"jsonStr":@[@{@"bourse":@"JN",@"goodsType":@"URP"},
+                                                                                 @{@"bourse":@"JN",@"goodsType":@"S"},
+                                                                                 @{@"bourse":@"JN",@"goodsType":@"KC"}] /*default 顺序*/,
+                                                                    @"tyoe" : @"0"/*不知道干嘛的*/};
+
+                                       // 参数正确返回
+                                       if (orderArray && orderArray.count > 0) {
+                                           parameters = @{@"jsonStr":orderArray /*顺序*/,
+                                                          @"type" : @"0"/*不知道干嘛的*/};
+                                       }
+                                       
+                                               weakSelf.preTask = [[CTNetworkManager sharedManager]post:CTBaseUrl
+                                                                           urlString:CTHmPgMarketInfo
+                                                                          parameters:parameters
+                                                                          encryption:YES
+                                                                          completion:^(id response, NSError *error) {
+                                                                              CTNLog(@"market request done");
+                                                                              if (error) {
+                                                                                  completion(nil, error);
+                                                                              }else{
+                                                                                  NSMutableArray *dataArray = response[@"data"]
+                                                                                                                      [@"data"]
+                                                                                                                      [@"dataList"];
+                                                                                  
+                                                                                  NSMutableArray *modelArray = [[NSMutableArray alloc]
+                                                                                                                init];
+                                                                                  
+                                                                                  for (NSDictionary *info in dataArray) {
+                                                                                      CTHmPgMarketModel *model = [CTHmPgMarketModel yy_modelWithDictionary:info];
+                                                                                      // 判断价格是否上涨
+                                                                                      [weakSelf checkMarketPriceIncrease:model];
+                                                                                      [modelArray addObject:model];
+                                                                                  }
+                                                                                  
+                                                                                  weakSelf.preMarketInfoArray = weakSelf.marketInfoArray;
+                                                                                  weakSelf.marketInfoArray = [modelArray copy];
+                                                                                  weakSelf.preTask = nil;
+                                                                                  completion([modelArray copy], nil);
+                                                                              }
+                                                                          }
+                                                ];
+
+                                           }
+         ];
 }
 #pragma mark - ☸getter and setter
 

@@ -25,5 +25,10 @@ NSString *const CTHmPgNewsInfo = @"calfTrader-communityCenter-api/information/li
 NSString *const CTHmPgBannerInfo =  @"calfTrader-systemCenter-web/admin/homeIconApi/list.do";
 // 轮播数据
 NSString *const CTHmFlashViewInfo = @"calfTrader-communityCenter-api/information/informationColumnBanNew.do";
+// market数据
+NSString *const CTHmPgMarketParametr = @"calfTrader-accountCenter-api/activity/getOrder.do";
+NSString *const CTHmPgMarketInfo = @"calfTrader-HGKLine-api/tradingKLine/getCustomMarketList.do";
+
+
 // NSUserDefaults 存储对应的key
 NSString *const CTNULastVersionNum = @"lastVersionBug";

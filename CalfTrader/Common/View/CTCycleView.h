@@ -30,6 +30,7 @@ typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
  */
 @interface CTCycleView : UIView
 
+@property (nonatomic, strong, readonly) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic, strong) NSArray<NSString *> *dataSource; // 数据源,封面图片链接
 @property (nonatomic, assign) BOOL autoPlay; // default YES;
 @property (nonatomic, assign) BOOL loop; // 是否循环，default YES

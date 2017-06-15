@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CTHmPgNewsModel.h"
 #import "CTHmPgBannerModel.h"
+#import "CTHmPgMarketModel.h"
 
 typedef void(^ CTHmPgPresenterCompletion)(id response, NSError* error);
 
@@ -37,5 +38,13 @@ typedef void(^ CTHmPgPresenterCompletion)(id response, NSError* error);
  @param completion 请求结束回调
  */
 -(void)requestBannerInfoCompletion:(CTHmPgPresenterCompletion)completion;
+
+
+/**
+ 请求交易市场数据
+
+ @param completion 请求结束回调
+ */
+-(void)requesetMarketInfoCompletion:(CTHmPgPresenterCompletion)completion;
 
 @end
