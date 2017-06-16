@@ -6,10 +6,10 @@
 //  Copyright © 2017年 上海宏鹿. All rights reserved.
 //
 
-#import "CTViewController.h"
+#import "CTTableViewController.h"
 #import "CTHmPgNewsModel.h"
 
-@interface CTHmPgNewsDetailVC : CTViewController
+@interface CTHmPgNewsDetailVC : CTTableViewController
 
 @property (nonatomic, strong) CTHmPgNewsModel *newsModel;
 

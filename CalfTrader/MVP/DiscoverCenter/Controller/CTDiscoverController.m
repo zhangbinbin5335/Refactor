@@ -7,7 +7,7 @@
 //
 
 #import "CTDiscoverController.h"
-#import <EventKit/EventKit.h>
+#import "CTRadarScanView.h"
 
 @interface CTDiscoverController ()
 
@@ -19,6 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CTRadarScanView *radarView = [[CTRadarScanView alloc]initWithFrame:CGRectMake(0,
+                                                                                  100,
+                                                                                  100,
+                                                                                  100)];
+    [self.view addSubview:radarView];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [radarView startAnimate];
+    });
     
 //    UIImage *navbarBgImage = [UIImage imageNamed:@"navbar_background"];
 //    UIImage *newImage = [navbarBgImage resizableImageWithCapInsets:UIEdgeInsetsMake(0,

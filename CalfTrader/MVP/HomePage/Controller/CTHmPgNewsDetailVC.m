@@ -20,20 +20,42 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO];
+    [self initSubViews];
 }
 
 #pragma mark - 🔒private
+-(void)initSubViews{
+}
 
 #pragma mark - 🔄overwrite
 
 #pragma mark - 🚪public
 
 #pragma mark - 🍐delegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView
+        cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]init];
+    }
+    cell.textLabel.text = @"title";
+    cell.detailTextLabel.text = @"detail";
+    return cell;
+}
 
 #pragma mark - ☎️notification
 
 #pragma mark - 🎬event response
 
 #pragma mark - ☸getter and setter
+
 
 @end
