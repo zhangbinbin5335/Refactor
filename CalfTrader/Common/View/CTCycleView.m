@@ -11,7 +11,7 @@
 static NSString *const kCellID = @"flashViewCellID";
 static NSString *const kOverCellID = @"overFlashViewCellID";
 
-CGFloat kMaxSection = 100;
+static CGFloat kMaxSection = 100;
 
 @interface CTFlashViewCell : UICollectionViewCell
 

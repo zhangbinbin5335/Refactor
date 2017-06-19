@@ -14,6 +14,15 @@
  */
 @interface CTRadarScanView : UIView
 
+/**
+ 开始动画，循环播放
+ */
 -(void)startAnimate;
+
+
+/**
+ 停止动画
+ */
+-(void)stopAnimate;
 
 @end

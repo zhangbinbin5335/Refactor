@@ -30,6 +30,9 @@
         [radarView startAnimate];
     });
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [radarView stopAnimate];
+    });
 //    UIImage *navbarBgImage = [UIImage imageNamed:@"navbar_background"];
 //    UIImage *newImage = [navbarBgImage resizableImageWithCapInsets:UIEdgeInsetsMake(0,
 //                                                                                    navbarBgImage.size.width/2. - 10,

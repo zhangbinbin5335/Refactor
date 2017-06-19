@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) CAShapeLayer *surroundLayer; // 最外层环绕layer
 @property (nonatomic, strong) CAShapeLayer *pointLayer; // 中间圆心layer
+@property (nonatomic, strong) CAShapeLayer *secondPointLayer; // 接替pointlayer动画
 @property (nonatomic, strong) CAShapeLayer *radarLayer; // 雷达layer
 
 @end
@@ -23,11 +24,16 @@
     if (self = [super initWithFrame:frame]) {
         [self.layer addSublayer:self.radarLayer];
         [self.layer addSublayer:self.pointLayer];
+        [self.layer addSublayer:self.secondPointLayer];
         [self.layer addSublayer:self.surroundLayer];
         self.backgroundColor = [UIColor whiteColor];
     }
     
     return self;
+}
+
+-(void)dealloc{
+    [self removeAllAnimate];
 }
 
 -(void)layoutSubviews{
@@ -36,7 +42,10 @@
     CGFloat space = 5;
     
     [self drawSurroundLayer:bounds lineWidth:surroundLineWidth];
-    [self drawPointLayer:bounds];
+    [self drawPointLayer:CGRectMake(space ,
+                                    space ,
+                                    bounds.size.width - (space + surroundLineWidth) * 2,
+                                    bounds.size.width - (space + surroundLineWidth) * 2)];
     
     self.radarLayer.frame = CGRectMake(space + surroundLineWidth,
                                        space + surroundLineWidth,
@@ -67,11 +76,43 @@
     UIBezierPath *circlePath = [UIBezierPath bezierPathWithRoundedRect:rect
                                                           cornerRadius:rect.size.width/2.];
     self.pointLayer.path = circlePath.CGPath;
-    self.surroundLayer.fillColor = [UIColor colorWithRed:251/255.
+    self.pointLayer.fillColor = [UIColor colorWithRed:251/255.
                                                      green:41/255.
                                                       blue:107/255.
                                                      alpha:0.1].CGColor;// rgba(251, 41, 107, 0.1)
-    self.surroundLayer.strokeColor = [UIColor clearColor].CGColor;
+    self.pointLayer.strokeColor = [UIColor clearColor].CGColor;
+    
+    self.secondPointLayer.frame = rect;
+    self.secondPointLayer.path = self.pointLayer.path;
+    self.secondPointLayer.strokeColor = self.pointLayer.strokeColor;
+    self.secondPointLayer.fillColor = self.pointLayer.fillColor;
+}
+
+-(CAAnimationGroup*)pointLayerAnimationGroup{
+    CABasicAnimation *scaleAnimation = [CABasicAnimation
+                                        animationWithKeyPath:@"transform.scale"];
+    scaleAnimation.fromValue = @(0.2);
+    scaleAnimation.toValue = @(1);
+    
+    CABasicAnimation *opacityAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    opacityAnimation.fromValue = @(1);
+    opacityAnimation.toValue = @(0);
+    
+    /* 动画组 */
+    CAAnimationGroup *pointGroup = [CAAnimationGroup animation];
+    pointGroup.animations = @[scaleAnimation, opacityAnimation];
+    // 动画选项设定
+    pointGroup.duration = 2.;
+    pointGroup.repeatCount = HUGE_VALF;
+    
+    return pointGroup;
+}
+
+-(void)removeAllAnimate{
+    [self.radarLayer removeAllAnimations];
+    [self.surroundLayer removeAllAnimations];
+    [self.pointLayer removeAllAnimations];
+    [self.secondPointLayer removeAllAnimations];
 }
 
 #pragma mark - 🔄overwrite
@@ -81,7 +122,7 @@
     CABasicAnimation *surroundAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     surroundAnimation.fromValue = @(2 * M_PI);
     surroundAnimation.toValue = @(0);
-    surroundAnimation.duration = 1.0;
+    surroundAnimation.duration = 1.5;
     surroundAnimation.repeatCount = HUGE_VALF;
     
     [self.surroundLayer addAnimation:surroundAnimation forKey:@"surroundAnimation"];
@@ -94,28 +135,19 @@
 
     [self.radarLayer addAnimation:radarAnimation forKey:@"radarAnimation"];
     
-    CABasicAnimation *scaleAnimation =
-    [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    CAAnimationGroup *pointGroup = [self pointLayerAnimationGroup];
+    [self.pointLayer addAnimation:pointGroup
+                           forKey:@"point_groupAnimation"];
     
-    // 终点设定
-    scaleAnimation.toValue = [NSNumber numberWithFloat:80];; // 終点
-    
-    
-    /* 动画2（绕Z轴中心旋转） */
-    CABasicAnimation *animation2 =
-    [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    
-    // 设定旋转角度
-    animation2.fromValue = [NSNumber numberWithFloat:0.0]; // 开始时的角度
-    animation2.toValue = [NSNumber numberWithFloat:44 * M_PI]; // 结束时的角度
-    
-    
-    /* 动画组 */
-    CAAnimationGroup *group = [CAAnimationGroup animation];
-    
-    // 动画选项设定
-    group.duration = 3.0;
-    group.repeatCount = 1;
+    //
+    CAAnimationGroup *secPointGroup = [self pointLayerAnimationGroup];
+    secPointGroup.timeOffset = 1.;
+    [self.secondPointLayer addAnimation:secPointGroup
+                                 forKey:@"secpoint_groupAnimation"];
+}
+
+-(void)stopAnimate{
+    [self removeAllAnimate];
 }
 #pragma mark - ☸getter and setter
 -(CAShapeLayer *)radarLayer{
@@ -131,9 +163,19 @@
 -(CAShapeLayer *)pointLayer{
     if (!_pointLayer) {
         _pointLayer = [[CAShapeLayer alloc] init];
+        _pointLayer.opacity = 0;
     }
     
     return _pointLayer;
+}
+
+-(CAShapeLayer *)secondPointLayer{
+    if (!_secondPointLayer) {
+        _secondPointLayer = [[CAShapeLayer alloc] init];
+        _secondPointLayer.opacity = 0;
+    }
+    
+    return _secondPointLayer;
 }
 
 -(CAShapeLayer *)surroundLayer{
