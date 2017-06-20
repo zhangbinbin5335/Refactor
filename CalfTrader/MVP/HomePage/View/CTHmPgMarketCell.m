@@ -144,6 +144,16 @@ static const CGFloat kOffSet = 8;
     self.amplitudeRatioLabel.text = model.amplitudeRatio;
     self.priceLabel.text = model.price;
     
+    if ([model.amplitudeRatio floatValue] > 0) {
+        self.amplitudeLabel.textColor = [UIColor redColor];
+        self.amplitudeRatioLabel.textColor = [UIColor redColor];
+        self.priceLabel.textColor = [UIColor redColor];
+    }else{
+        self.amplitudeLabel.textColor = [UIColor greenColor];
+        self.amplitudeRatioLabel.textColor = [UIColor greenColor];
+        self.priceLabel.textColor = [UIColor greenColor];
+    }
+    
     self.userInteractionEnabled = model.marketClose;
     if (model.increase > 0) {
         // 涨 背景变红
