@@ -40,6 +40,16 @@
 //                                                                                    navbarBgImage.size.width/2.-10)];
 //    [self.navigationController.navigationBar setBackgroundImage:newImage
 //                                                  forBarMetrics:UIBarMetricsDefault];
+    
+    
+  
+//   UITextView *textview= [[UITextView alloc]initWithFrame:CGRectMake(10, 300, 250, 170)];
+//    NSString *html = [NSString stringWithFormat:@"<font color='red'>A</font><br/> shared photo of <font color='red'>B</font> with <font color='red'>C</font>, <font color='red'>D</font> "];
+//    [textview setValue:html forKey:@"contentToHTMLString"];
+//    textview.textAlignment = NSTextAlignmentLeft;
+//    textview.editable = NO;
+//    textview.font = [UIFont fontWithName:@"Verdana" size:20.0];
+//    [self.view addSubview:textview];
 }
 
 #pragma mark - 🔒private

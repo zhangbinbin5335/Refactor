@@ -26,5 +26,8 @@ extern NSString *const CTHmFlashViewInfo;
 extern NSString *const CTHmPgMarketParametr; // 先去取得CTHmPgMarketInfo请求参数
 extern NSString *const CTHmPgMarketInfo;
 
+// homepage news detail
+extern NSString *const CTHmPgNewsDtailInfo;
+
 // NSUserDefaults 存储对应的key
 extern NSString *const CTNULastVersionNum;

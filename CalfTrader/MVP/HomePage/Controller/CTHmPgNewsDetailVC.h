@@ -13,4 +13,9 @@
 
 @property (nonatomic, strong) CTHmPgNewsModel *newsModel;
 
+/**
+ 用于请求news详情
+ */
+@property (nonatomic, copy) NSString *informationId;
+
 @end

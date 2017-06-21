@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430598921EF8F004001AC079 /* CTHmPgNewsDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598911EF8F004001AC079 /* CTHmPgNewsDetailCell.m */; };
+		430598951EFA4C40001AC079 /* CTHmPgNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598941EFA4C40001AC079 /* CTHmPgNewsDetailModel.m */; };
+		430598981EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */; };
 		431D06621EE14820004A6AC6 /* CTNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06611EE14820004A6AC6 /* CTNotificationManager.m */; };
 		431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06641EE4F91E004A6AC6 /* CTSocialShareManager.m */; };
 		431D06681EE50344004A6AC6 /* CTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06671EE50344004A6AC6 /* CTTabBarController.m */; };
@@ -48,6 +51,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430598901EF8F004001AC079 /* CTHmPgNewsDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsDetailCell.h; sourceTree = "<group>"; };
+		430598911EF8F004001AC079 /* CTHmPgNewsDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailCell.m; sourceTree = "<group>"; };
+		430598931EFA4C40001AC079 /* CTHmPgNewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsDetailModel.h; sourceTree = "<group>"; };
+		430598941EFA4C40001AC079 /* CTHmPgNewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailModel.m; sourceTree = "<group>"; };
+		430598961EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsDetailPresenter.h; sourceTree = "<group>"; };
+		430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailPresenter.m; sourceTree = "<group>"; };
 		431D06601EE14820004A6AC6 /* CTNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNotificationManager.h; sourceTree = "<group>"; };
 		431D06611EE14820004A6AC6 /* CTNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNotificationManager.m; sourceTree = "<group>"; };
 		431D06631EE4F91E004A6AC6 /* CTSocialShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSocialShareManager.h; sourceTree = "<group>"; };
@@ -175,6 +184,8 @@
 			children = (
 				431D069C1EE65B8E004A6AC6 /* CTHmPgNewsModel.h */,
 				431D069D1EE65B8E004A6AC6 /* CTHmPgNewsModel.m */,
+				430598931EFA4C40001AC079 /* CTHmPgNewsDetailModel.h */,
+				430598941EFA4C40001AC079 /* CTHmPgNewsDetailModel.m */,
 				43CC88AD1EF161AC0020B024 /* CTHmPgBannerModel.h */,
 				43CC88AE1EF161AC0020B024 /* CTHmPgBannerModel.m */,
 				43CC88B31EF25AAD0020B024 /* CTHmPgMarketModel.h */,
@@ -188,6 +199,8 @@
 			children = (
 				431D06AB1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.h */,
 				431D06AC1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m */,
+				430598961EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.h */,
+				430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -197,6 +210,8 @@
 			children = (
 				431D06A21EE7A0AE004A6AC6 /* CTHmPgNewsCell.h */,
 				431D06A31EE7A0AE004A6AC6 /* CTHmPgNewsCell.m */,
+				430598901EF8F004001AC079 /* CTHmPgNewsDetailCell.h */,
+				430598911EF8F004001AC079 /* CTHmPgNewsDetailCell.m */,
 				43CC88A81EF011290020B024 /* CTHmBannerCell.h */,
 				43CC88A91EF011290020B024 /* CTHmBannerCell.m */,
 				43CC88B01EF255450020B024 /* CTHmPgMarketCell.h */,
@@ -684,6 +699,7 @@
 				4323E5781EDE978F00B25F07 /* CTLocationManager.m in Sources */,
 				431D068B1EE52B4B004A6AC6 /* CTInvestmentController.m in Sources */,
 				43F39B451EF3B87C00369E57 /* CTTableViewController.m in Sources */,
+				430598921EF8F004001AC079 /* CTHmPgNewsDetailCell.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
 				431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */,
 				4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */,
@@ -693,7 +709,9 @@
 				4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */,
 				431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */,
 				431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */,
+				430598981EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m in Sources */,
 				43CC88B81EF2B3610020B024 /* CTHmPgNewsDetailVC.m in Sources */,
+				430598951EFA4C40001AC079 /* CTHmPgNewsDetailModel.m in Sources */,
 				4323E54B1EDE641B00B25F07 /* main.m in Sources */,
 				4323E5621EDE64D600B25F07 /* CTAppDelegate.m in Sources */,
 				431D06761EE52760004A6AC6 /* CTHomePageController.m in Sources */,

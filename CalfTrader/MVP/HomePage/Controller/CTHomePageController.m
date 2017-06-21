@@ -204,6 +204,7 @@ UITableViewDataSource>
     CTHmPgNewsDetailVC *newsDetailVC = [[CTHmPgNewsDetailVC alloc]init];
     newsDetailVC.newsModel = newsModel;
     newsDetailVC.title = @"消息详情";
+    newsDetailVC.informationId = newsModel.informationId;
     newsDetailVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:newsDetailVC animated:YES];
 }

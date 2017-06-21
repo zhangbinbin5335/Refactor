@@ -42,8 +42,8 @@ typedef void(^ CTHmPgPresenterCompletion)(id response, NSError* error);
 
 /**
  请求交易市场数据
-
- @param completion 请求结束回调
+ 上一次请求未结束时，再次请求不处理
+ @param completion 请求结束回调,会初始化CTHmPgMarketModel.increase值.
  */
 -(void)requesetMarketInfoCompletion:(CTHmPgPresenterCompletion)completion;
 
