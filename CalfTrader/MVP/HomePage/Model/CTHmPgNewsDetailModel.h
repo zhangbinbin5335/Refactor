@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface CTHmPgNewsPraiseModel : NSObject
+
+@property (nonatomic, copy) NSString *userAvatar;
+
+@end
+
 @interface CTHmPgNewsDetailModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -16,6 +22,9 @@
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, copy) NSString *userRole;
 @property (nonatomic, copy) NSString *createTime;
+@property (nonatomic, assign) NSUInteger praiseCounts; // 点赞数
+@property (nonatomic, strong) NSArray<CTHmPgNewsPraiseModel *> *informationPraise; //  点赞信息
+@property (nonatomic, assign) BOOL isPraise; //当前用户是否点赞
 
 
 @end

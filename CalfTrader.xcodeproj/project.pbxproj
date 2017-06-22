@@ -11,6 +11,7 @@
 		430598951EFA4C40001AC079 /* CTHmPgNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598941EFA4C40001AC079 /* CTHmPgNewsDetailModel.m */; };
 		430598981EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */; };
 		4305989B1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4305989A1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m */; };
+		4305989E1EFBE2E6001AC079 /* cmn_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */; };
 		431D06621EE14820004A6AC6 /* CTNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06611EE14820004A6AC6 /* CTNotificationManager.m */; };
 		431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06641EE4F91E004A6AC6 /* CTSocialShareManager.m */; };
 		431D06681EE50344004A6AC6 /* CTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06671EE50344004A6AC6 /* CTTabBarController.m */; };
@@ -60,6 +61,7 @@
 		430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailPresenter.m; sourceTree = "<group>"; };
 		430598991EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNwsDtalHdrView.h; sourceTree = "<group>"; };
 		4305989A1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNwsDtalHdrView.m; sourceTree = "<group>"; };
+		4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmn_default_avatar.png; sourceTree = "<group>"; };
 		431D06601EE14820004A6AC6 /* CTNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNotificationManager.h; sourceTree = "<group>"; };
 		431D06611EE14820004A6AC6 /* CTNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNotificationManager.m; sourceTree = "<group>"; };
 		431D06631EE4F91E004A6AC6 /* CTSocialShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSocialShareManager.h; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 		4323E56C1EDE695C00B25F07 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4305989E1EFBE2E6001AC079 /* cmn_default_avatar.png in Resources */,
 				4323E5751EDE6B2000B25F07 /* CTLaunchScreen.storyboard in Resources */,
 				4323E5701EDE69E500B25F07 /* Assets.xcassets in Resources */,
 			);
