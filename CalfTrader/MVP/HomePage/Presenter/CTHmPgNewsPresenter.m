@@ -142,7 +142,7 @@
                                                                           parameters:parameters
                                                                           encryption:YES
                                                                           completion:^(id response, NSError *error) {
-                                                                              CTNLog(@"market request done");
+//                                                                              CTNLog(@"market request done");
                                                                               if (error) {
                                                                                   completion(nil, error);
                                                                               }else{

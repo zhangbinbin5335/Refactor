@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *content;// 封面图片URL
 @property (nonatomic, copy) NSString *userAvatar;
 @property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, copy) NSString *userRole;
+@property (nonatomic, copy) NSString *createTime;
 
 
 @end

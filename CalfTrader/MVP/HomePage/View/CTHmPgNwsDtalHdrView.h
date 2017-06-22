@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CTHmPgNewsDetailModel.h"
 
 @interface CTHmPgNwsDtalHdrView : UIView
+
+-(void)fillData:(CTHmPgNewsDetailModel *)model;
 
 @end

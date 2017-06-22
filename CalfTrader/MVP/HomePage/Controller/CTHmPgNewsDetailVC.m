@@ -9,6 +9,7 @@
 #import "CTHmPgNewsDetailVC.h"
 #import "CTHmPgNewsDetailPresenter.h"
 #import "CTHmPgNewsDetailCell.h"
+#import "CTHmPgNwsDtalHdrView.h"
 
 @interface CTHmPgNewsDetailVC ()
 
@@ -32,10 +33,26 @@
 -(void)initSubViews{
 }
 
+-(void)configTableHeaderView{
+    if (self.presenter.newsDetailArray.count > 0 ) {
+        CTHmPgNwsDtalHdrView *headerView = [[CTHmPgNwsDtalHdrView alloc]initWithFrame:CGRectMake(0,
+                                                                                                 0,
+                                                                                                 self.view.ct_width,
+                                                                                                 80)];
+        CTHmPgNewsDetailModel *model = self.presenter.newsDetailArray[0];
+        [headerView fillData:model];
+        self.tableView.tableHeaderView = headerView;
+    }else{
+        self.tableView.tableHeaderView = nil;
+    }
+    
+}
+
 -(void)requestNewsDetailInfo{
     __weak typeof(self) weakSelf = self;
     [self.presenter requestNewsInfo:self.informationId completion:^(id response, NSError *error) {
         if (response) {
+            [weakSelf configTableHeaderView];
             [weakSelf.tableView reloadData];
         }
     }];
