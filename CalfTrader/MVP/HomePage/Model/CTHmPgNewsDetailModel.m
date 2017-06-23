@@ -26,18 +26,9 @@
 
 @implementation CTHmPgNewsDetailModel
 
--(NSArray<CTHmPgNewsPraiseModel *> *)informationPraise{
-    if (_informationPraise && _informationPraise.count > 0) {
-        NSMutableArray *modelArray = [[NSMutableArray alloc]init];
-        for (NSDictionary *praiseDic in _informationPraise) {
-            CTHmPgNewsPraiseModel *model = [CTHmPgNewsPraiseModel yy_modelWithDictionary:praiseDic];
-            [modelArray addObject:model];
-        }
-        
-        return [modelArray copy];
-    }
-    
-    return nil;
++ (NSDictionary *)modelContainerPropertyGenericClass
+{
+    return @{@"informationPraise":[CTHmPgNewsPraiseModel class]};
 }
 
 @end

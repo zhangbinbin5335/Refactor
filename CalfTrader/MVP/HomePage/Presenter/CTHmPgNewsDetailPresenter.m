@@ -26,12 +26,14 @@
                                    if (error) {
                                        completion(nil, error);
                                    }else{
-                                       NSDictionary *dataDic = response[@"data"][@"data"][@"information"];
+                                       NSDictionary *dataDic = response[@"data"][@"data"];
                                        NSMutableArray *modelArray = [[NSMutableArray alloc]init];
-                                       CTHmPgNewsDetailModel *model = [CTHmPgNewsDetailModel
-                                                                       yy_modelWithDictionary:dataDic];
-                                       if (model) {
-                                           [modelArray addObject:model];
+                                       CTHmPgNewsDetailModel *informationModel = [CTHmPgNewsDetailModel yy_modelWithDictionary:dataDic[@"information"]];
+                                       CTHmPgNewsCmntModelArray *commentModel = [CTHmPgNewsCmntModelArray yy_modelWithDictionary:dataDic];
+                                       
+                                       weakSelf.commentArray = commentModel;
+                                       if (informationModel) {
+                                           [modelArray addObject:informationModel];
                                        }
                                        
                                        if (modelArray.count > 0) {

@@ -170,6 +170,7 @@ static const CGFloat kOffSet = 10;
     self.timeLabel.text = [NSString convertTimeString:model.createTime];
     self.nickNameLabel.text = model.nickname;
     self.prasieLabel.text = [NSString stringWithFormat:@"%lu人赞",(unsigned long)model.praiseCounts];
+    
     [self.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:model.homePic]
                             placeholderImage:[UIImage imageNamed:@"hm_news_placeholder"]];
 }

@@ -9,6 +9,7 @@
 #import "CTHmPgNewsDetailVC.h"
 #import "CTHmPgNewsDetailPresenter.h"
 #import "CTHmPgNewsDetailCell.h"
+#import "CTHmPgNewsCommetnCell.h"
 #import "CTHmPgNwsDtalHdrView.h"
 
 @interface CTHmPgNewsDetailVC ()
@@ -71,7 +72,7 @@
     if (section == 0) {
         return self.presenter.newsDetailArray.count;
     }else{
-        return 50;
+        return self.presenter.commentArray.informationComment.count;
     }
 }
 
@@ -83,13 +84,8 @@
         
         return cell;
     }else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        }
-        cell.textLabel.text = [NSString
-                               stringWithFormat:@"section = %ld, item = %ld",(long)indexPath.section,indexPath.item];
-        
+        CTHmPgNewsCommetnCell *cell = [CTHmPgNewsCommetnCell cellWithTableView:tableView];
+        [cell fillData:self.presenter.commentArray.informationComment[indexPath.item]];
         return cell;
     }
 }
