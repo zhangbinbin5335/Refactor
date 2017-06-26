@@ -49,9 +49,9 @@ static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
     self.userRoleLabel.text = model.userRole;
     if (model.replyNickname &&
         model.replyNickname.length > 0) {
-        NSString *replyContent = [NSString stringWithFormat:@"回复 %@ :%@",model.replyNickname, model.commentContent];
+        NSString *replyContent = [NSString stringWithFormat:@"回复%@:%@",model.replyNickname, model.commentContent];
         self.commentContent.content = replyContent;
-        [self.commentContent addLink:NSMakeRange(3, model.replyNickname.length) click:^(NSString *linkText) {
+        [self.commentContent addLink:NSMakeRange(2, model.replyNickname.length) click:^(NSString *linkText) {
             CTNLog(@"%@",linkText);
         }];
     }
