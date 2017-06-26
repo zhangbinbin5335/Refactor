@@ -7,6 +7,7 @@
 //
 
 #import "CTHmPgNewsCommetnCell.h"
+#import "NSString+CTTime.h"
 
 static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
 
@@ -41,9 +42,9 @@ static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
                                                         relativeToURL:[NSURL URLWithString:CTBaseUrl]]
                                 placeholderImage:[UIImage imageNamed:@"cmn_default_avatar"]];
     self.userNameLabel.text = model.nickname;
-    self.commentTimeLabel.text = model.createTime;
+    self.commentTimeLabel.text = [NSString convertTimeString:model.createTime];
     self.commentContentLabel.text = model.commentContent;
-    self.userNameLabel.text = model.userRole;
+    self.userRoleLabel.text = model.userRole;
 }
 
 @end
