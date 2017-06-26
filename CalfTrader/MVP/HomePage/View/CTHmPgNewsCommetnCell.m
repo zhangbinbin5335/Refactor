@@ -8,6 +8,7 @@
 
 #import "CTHmPgNewsCommetnCell.h"
 #import "NSString+CTTime.h"
+#import "CTLinkView.h"
 
 static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
 
@@ -17,7 +18,8 @@ static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userRoleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentTimeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *commentContentLabel;
+@property (weak, nonatomic) IBOutlet CTLinkView *commentContent;
+
 
 @end
 
@@ -43,8 +45,16 @@ static NSString *const kCTHmPgNewsCommetnCellID = @"ctHmNwsCmntCellID";
                                 placeholderImage:[UIImage imageNamed:@"cmn_default_avatar"]];
     self.userNameLabel.text = model.nickname;
     self.commentTimeLabel.text = [NSString convertTimeString:model.createTime];
-    self.commentContentLabel.text = model.commentContent;
+    self.commentContent.content = model.commentContent;
     self.userRoleLabel.text = model.userRole;
+    if (model.replyNickname &&
+        model.replyNickname.length > 0) {
+        NSString *replyContent = [NSString stringWithFormat:@"回复 %@ :%@",model.replyNickname, model.commentContent];
+        self.commentContent.content = replyContent;
+        [self.commentContent addLink:NSMakeRange(3, model.replyNickname.length) click:^(NSString *linkText) {
+            CTNLog(@"%@",linkText);
+        }];
+    }
 }
 
 @end

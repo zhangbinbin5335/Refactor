@@ -39,6 +39,7 @@
 		4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5841EE03C7F00B25F07 /* NSString+CTRandom.m */; };
 		4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */; };
 		4323E5911EE0FED200B25F07 /* NSData+CTMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */; };
+		434D733F1F00AE5700287563 /* CTLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D733E1F00AE5700287563 /* CTLinkView.m */; };
 		43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43578D971EEE37F0008B0134 /* CTCycleView.m */; };
 		436A17A71EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */; };
 		436A17A81EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */; };
@@ -119,6 +120,8 @@
 		4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CTJson.m"; sourceTree = "<group>"; };
 		4323E58F1EE0FED200B25F07 /* NSData+CTMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CTMD5.h"; sourceTree = "<group>"; };
 		4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CTMD5.m"; sourceTree = "<group>"; };
+		434D733D1F00AE5700287563 /* CTLinkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLinkView.h; sourceTree = "<group>"; };
+		434D733E1F00AE5700287563 /* CTLinkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLinkView.m; sourceTree = "<group>"; };
 		43578D961EEE37F0008B0134 /* CTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCycleView.h; sourceTree = "<group>"; };
 		43578D971EEE37F0008B0134 /* CTCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCycleView.m; sourceTree = "<group>"; };
 		436A17A41EFCC04400B7B510 /* CTHmPgNewsCommetnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsCommetnCell.h; sourceTree = "<group>"; };
@@ -519,6 +522,8 @@
 				43578D971EEE37F0008B0134 /* CTCycleView.m */,
 				43F39B481EF3CBDC00369E57 /* CTRadarScanView.h */,
 				43F39B491EF3CBDC00369E57 /* CTRadarScanView.m */,
+				434D733D1F00AE5700287563 /* CTLinkView.h */,
+				434D733E1F00AE5700287563 /* CTLinkView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +721,7 @@
 				431D069B1EE52C8B004A6AC6 /* CTUserController.m in Sources */,
 				431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */,
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
+				434D733F1F00AE5700287563 /* CTLinkView.m in Sources */,
 				43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */,
 				43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */,
 				431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */,
