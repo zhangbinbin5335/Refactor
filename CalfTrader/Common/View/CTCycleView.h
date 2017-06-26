@@ -37,6 +37,7 @@ typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
 @property (nonatomic, assign) BOOL pageHide; // default NO
 @property (nonatomic, assign) NSTimeInterval showTime; // 展示时间，default 3秒
 @property (nonatomic, copy) CTCycleViewDidSelectCompletion didSelectCompletion;
+@property (nonatomic, strong) UIImage *placeholderImage; // 默认图片
 
 /**
  默认展示是一张图片

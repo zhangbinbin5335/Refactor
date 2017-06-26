@@ -190,7 +190,7 @@ UICollectionViewDataSource>
     NSString *urlString = self.dataSource[indexPath.item];
     
     [cell.thumbImageView sd_setImageWithURL:[NSURL URLWithString:urlString]
-                           placeholderImage:nil];
+                           placeholderImage:self.placeholderImage];
     
     return cell;
 }

@@ -126,6 +126,7 @@ static NSString * const kCTHmPgNewsDetailCellID = @"kCTHmPgNewsDetailCellID";
         _likedUserView = [[CTCycleView alloc] init];
         _likedUserView.loop = NO;
         _likedUserView.pageHide = YES;
+        _likedUserView.placeholderImage = [UIImage imageNamed:@"cmn_default_avatar"];
     }
     
     return _likedUserView;
@@ -179,6 +180,7 @@ static NSString * const kCTHmPgNewsDetailCellID = @"kCTHmPgNewsDetailCellID";
     
     [self.likedUserView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40 * dataSource.count);
+        make.height.mas_equalTo(40);
     }];
     self.likedUserView.dataSource = dataSource;
 }
