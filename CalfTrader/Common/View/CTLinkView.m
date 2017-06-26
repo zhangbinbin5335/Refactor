@@ -22,6 +22,9 @@
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.textView];
         _contentFont = [UIFont systemFontOfSize:16.];
+        [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.top.equalTo(self);
+        }];
     }
     
     return self;
@@ -31,13 +34,12 @@
     if (self = [super initWithCoder:aDecoder]) {
         [self addSubview:self.textView];
         _contentFont = [UIFont systemFontOfSize:16.];
+        [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.bottom.top.equalTo(self);
+        }];
     }
     
     return self;
-}
-
--(void)layoutSubviews{
-    self.textView.frame = self.bounds;
 }
 
 #pragma mark - 🔒private
@@ -70,6 +72,7 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
     
     return NO;
 }
+
 - (void)textViewDidChangeSelection:(UITextView *)textView {
     if(!NSEqualRanges(textView.selectedRange, NSMakeRange(0, 0))) {
         textView.selectedRange = NSMakeRange(0, 0);
@@ -88,7 +91,6 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
     
     NSString *linkName = NSStringFromRange(range);
     [attrString setAttributes:@{NSLinkAttributeName:linkName,
-                                NSForegroundColorAttributeName : [UIColor lightGrayColor],
                                 NSFontAttributeName : _contentFont}
                         range:range];
     _textView.attributedText = attrString;
@@ -103,6 +105,7 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
         _textView.delegate = self;
         _textView.autocorrectionType = UITextAutocorrectionTypeNo;
         _textView.scrollEnabled = NO;
+        _textView.linkTextAttributes = @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
     }
     
     return _textView;
@@ -136,7 +139,6 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
     if (_content && _content.length > 0) {
         _textView.attributedText = [[NSAttributedString alloc]initWithString:_content
                                                                   attributes:@{NSFontAttributeName : _contentFont}];
-
     }
 }
 
