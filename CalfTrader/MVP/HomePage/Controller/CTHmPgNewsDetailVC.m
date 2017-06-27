@@ -11,10 +11,12 @@
 #import "CTHmPgNewsDetailCell.h"
 #import "CTHmPgNewsCommetnCell.h"
 #import "CTHmPgNwsDtalHdrView.h"
+#import "CTHmPgNewsInputView.h"
 
 @interface CTHmPgNewsDetailVC ()
 
 @property (nonatomic, strong) CTHmPgNewsDetailPresenter *presenter;
+@property (nonatomic, strong) CTHmPgNewsInputView *commentInputView; // 评论view
 
 @end
 
@@ -26,12 +28,27 @@
     [super viewDidLoad];
     
     [self.navigationController setNavigationBarHidden:NO];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(keyboardWillAppear:)
+                                                name:UIKeyboardWillShowNotification
+                                              object:nil];
+    
     [self initSubViews];
     [self requestNewsDetailInfo];
 }
 
 #pragma mark - 🔒private
+-(void)keyboardWillAppear:(NSNotification*)noti{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView scrollRectToVisible:[self.tableView convertRect:self.tableView.tableFooterView.bounds
+                                                               fromView:self.tableView.tableFooterView]
+                                   animated:YES];
+    });
+}
 -(void)initSubViews{
+    [self configTableFooterView];
 }
 
 -(void)configTableHeaderView{
@@ -46,7 +63,14 @@
     }else{
         self.tableView.tableHeaderView = nil;
     }
-    
+}
+
+-(void)configTableFooterView{
+    self.commentInputView.frame = CGRectMake(0,
+                                             0,
+                                             self.view.ct_width,
+                                             44);
+    self.tableView.tableFooterView = self.commentInputView;
 }
 
 -(void)requestNewsDetailInfo{
@@ -58,7 +82,6 @@
         }
     }];
 }
-
 #pragma mark - 🔄overwrite
 
 #pragma mark - 🚪public
@@ -113,6 +136,14 @@
     }
     
     return _presenter;
+}
+
+-(CTHmPgNewsInputView *)commentInputView{
+    if (!_commentInputView) {
+        _commentInputView = [[CTHmPgNewsInputView alloc] init];
+    }
+    
+    return _commentInputView;
 }
 
 
