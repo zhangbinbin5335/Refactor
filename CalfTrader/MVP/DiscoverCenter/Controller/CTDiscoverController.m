@@ -8,6 +8,7 @@
 
 #import "CTDiscoverController.h"
 #import "CTRadarScanView.h"
+#import "CTTextView.h"
 
 @interface CTDiscoverController ()
 
@@ -33,6 +34,13 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [radarView stopAnimate];
     });
+    
+    CTTextView *textView = [[CTTextView alloc]initWithFrame:CGRectMake(0, 300, 200, 100)];
+    textView.placeholder = @"self.placeholderLabel.frame = self.bounds;";
+    textView.layer.borderColor = [UIColor yellowColor].CGColor;
+    textView.layer.borderWidth = 3;
+    textView.layer.cornerRadius = 10;
+    [self.view addSubview:textView];
 //    UIImage *navbarBgImage = [UIImage imageNamed:@"navbar_background"];
 //    UIImage *newImage = [navbarBgImage resizableImageWithCapInsets:UIEdgeInsetsMake(0,
 //                                                                                    navbarBgImage.size.width/2. - 10,

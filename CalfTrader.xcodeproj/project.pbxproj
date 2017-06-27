@@ -44,6 +44,8 @@
 		436A17A71EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */; };
 		436A17A81EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */; };
 		436A17B11EFD31F200B7B510 /* CTHmPgNewsCmntModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17B01EFD31F200B7B510 /* CTHmPgNewsCmntModel.m */; };
+		43A246ED1F01090C00FB29FC /* CTHmPgNewsInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246EC1F01090C00FB29FC /* CTHmPgNewsInputView.m */; };
+		43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246EF1F010FDA00FB29FC /* CTTextView.m */; };
 		43CC88AA1EF011290020B024 /* CTHmBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88A91EF011290020B024 /* CTHmBannerCell.m */; };
 		43CC88AF1EF161AC0020B024 /* CTHmPgBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88AE1EF161AC0020B024 /* CTHmPgBannerModel.m */; };
 		43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B11EF255450020B024 /* CTHmPgMarketCell.m */; };
@@ -129,6 +131,10 @@
 		436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTHmPgNewsCommetnCell.xib; sourceTree = "<group>"; };
 		436A17AF1EFD31F200B7B510 /* CTHmPgNewsCmntModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsCmntModel.h; sourceTree = "<group>"; };
 		436A17B01EFD31F200B7B510 /* CTHmPgNewsCmntModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsCmntModel.m; sourceTree = "<group>"; };
+		43A246EB1F01090C00FB29FC /* CTHmPgNewsInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsInputView.h; sourceTree = "<group>"; };
+		43A246EC1F01090C00FB29FC /* CTHmPgNewsInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsInputView.m; sourceTree = "<group>"; };
+		43A246EE1F010FDA00FB29FC /* CTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTextView.h; sourceTree = "<group>"; };
+		43A246EF1F010FDA00FB29FC /* CTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTextView.m; sourceTree = "<group>"; };
 		43CC88A81EF011290020B024 /* CTHmBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmBannerCell.h; sourceTree = "<group>"; };
 		43CC88A91EF011290020B024 /* CTHmBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmBannerCell.m; sourceTree = "<group>"; };
 		43CC88AD1EF161AC0020B024 /* CTHmPgBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgBannerModel.h; sourceTree = "<group>"; };
@@ -233,6 +239,8 @@
 				436A17A41EFCC04400B7B510 /* CTHmPgNewsCommetnCell.h */,
 				436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */,
 				436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */,
+				43A246EB1F01090C00FB29FC /* CTHmPgNewsInputView.h */,
+				43A246EC1F01090C00FB29FC /* CTHmPgNewsInputView.m */,
 				430598991EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.h */,
 				4305989A1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m */,
 				43CC88A81EF011290020B024 /* CTHmBannerCell.h */,
@@ -524,6 +532,8 @@
 				43F39B491EF3CBDC00369E57 /* CTRadarScanView.m */,
 				434D733D1F00AE5700287563 /* CTLinkView.h */,
 				434D733E1F00AE5700287563 /* CTLinkView.m */,
+				43A246EE1F010FDA00FB29FC /* CTTextView.h */,
+				43A246EF1F010FDA00FB29FC /* CTTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -723,12 +733,14 @@
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
 				434D733F1F00AE5700287563 /* CTLinkView.m in Sources */,
 				43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */,
+				43A246ED1F01090C00FB29FC /* CTHmPgNewsInputView.m in Sources */,
 				43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */,
 				431D06AD1EE7D7E0004A6AC6 /* CTHmPgNewsPresenter.m in Sources */,
 				4323E5781EDE978F00B25F07 /* CTLocationManager.m in Sources */,
 				431D068B1EE52B4B004A6AC6 /* CTInvestmentController.m in Sources */,
 				43F39B451EF3B87C00369E57 /* CTTableViewController.m in Sources */,
 				430598921EF8F004001AC079 /* CTHmPgNewsDetailCell.m in Sources */,
+				43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
 				431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */,
 				4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */,
