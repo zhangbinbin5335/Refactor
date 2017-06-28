@@ -13,6 +13,8 @@ typedef void(^CTLinkViewClick)(NSString *linkText);
 
 @property (nonatomic, copy) NSString *content; // 显示内容,重新赋值，属性将被重置
 @property (nonatomic, strong) UIFont *contentFont;
+@property (nonatomic, strong) UIColor *contentColor;
+@property (nonatomic, strong) UIColor *linkColor; // 链接文字颜色
 
 
 /**

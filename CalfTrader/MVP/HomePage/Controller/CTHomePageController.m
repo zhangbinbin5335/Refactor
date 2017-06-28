@@ -7,6 +7,7 @@
 //
 
 #import "CTHomePageController.h"
+/* custom view */
 #import "CTHmPgNewsCell.h"
 #import "CTCycleView.h"
 #import "CTHmBannerCell.h"
@@ -15,6 +16,9 @@
 #import "CTHmPgNewsPresenter.h"
 /* vc */
 #import "CTHmPgNewsDetailVC.h"
+#import "CTLogInViewController.h"
+/* ff */
+#import <UShareUI/UShareUI.h>
 
 @interface CTHomePageController ()
 <UITableViewDelegate,
@@ -48,10 +52,13 @@ UITableViewDataSource>
     [super viewDidLoad];
     
     [self initSubViews];
+    // 网络请求
     [self requestNewsInfo];
     [self requestFlashViewInfo];
     [self requestBannerInfo];
     [self requesetMarketInfo];
+    // 设置view block回调
+    
     
     // 每隔一秒刷新market数据
     [self startLoopRequestMarketInfo:1];
@@ -276,6 +283,14 @@ UITableViewDataSource>
                 cell = [[CTHmPgMarketCell alloc]init];
             }
             return cell;
+        };
+        // 点击回调
+        __weak typeof(self) weakSelf = self;
+        _marketView.didSelectCompletion = ^(NSUInteger index) {
+            [weakSelf presentViewController:[[CTLogInViewController alloc]init]
+                                   animated:YES
+                                 completion:nil];
+            
         };
     }
     

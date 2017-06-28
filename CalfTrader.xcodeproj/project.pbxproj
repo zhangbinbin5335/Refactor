@@ -46,6 +46,8 @@
 		436A17B11EFD31F200B7B510 /* CTHmPgNewsCmntModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17B01EFD31F200B7B510 /* CTHmPgNewsCmntModel.m */; };
 		43A246ED1F01090C00FB29FC /* CTHmPgNewsInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246EC1F01090C00FB29FC /* CTHmPgNewsInputView.m */; };
 		43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246EF1F010FDA00FB29FC /* CTTextView.m */; };
+		43A246F81F0381E500FB29FC /* CTLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246F71F0381E500FB29FC /* CTLogInViewController.m */; };
+		43A246FB1F0384F900FB29FC /* CTLogInTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246FA1F0384F900FB29FC /* CTLogInTextField.m */; };
 		43CC88AA1EF011290020B024 /* CTHmBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88A91EF011290020B024 /* CTHmBannerCell.m */; };
 		43CC88AF1EF161AC0020B024 /* CTHmPgBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88AE1EF161AC0020B024 /* CTHmPgBannerModel.m */; };
 		43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B11EF255450020B024 /* CTHmPgMarketCell.m */; };
@@ -135,6 +137,10 @@
 		43A246EC1F01090C00FB29FC /* CTHmPgNewsInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsInputView.m; sourceTree = "<group>"; };
 		43A246EE1F010FDA00FB29FC /* CTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTextView.h; sourceTree = "<group>"; };
 		43A246EF1F010FDA00FB29FC /* CTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTextView.m; sourceTree = "<group>"; };
+		43A246F61F0381E500FB29FC /* CTLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLogInViewController.h; sourceTree = "<group>"; };
+		43A246F71F0381E500FB29FC /* CTLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLogInViewController.m; sourceTree = "<group>"; };
+		43A246F91F0384F900FB29FC /* CTLogInTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLogInTextField.h; sourceTree = "<group>"; };
+		43A246FA1F0384F900FB29FC /* CTLogInTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLogInTextField.m; sourceTree = "<group>"; };
 		43CC88A81EF011290020B024 /* CTHmBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmBannerCell.h; sourceTree = "<group>"; };
 		43CC88A91EF011290020B024 /* CTHmBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmBannerCell.m; sourceTree = "<group>"; };
 		43CC88AD1EF161AC0020B024 /* CTHmPgBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgBannerModel.h; sourceTree = "<group>"; };
@@ -557,6 +563,7 @@
 		4323E56A1EDE695C00B25F07 /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				43A246F11F0381C300FB29FC /* LogInCenter */,
 				431D066C1EE5271F004A6AC6 /* HomePage */,
 				431D06771EE529BA004A6AC6 /* QuotationCenter */,
 				431D06841EE52B1E004A6AC6 /* InvestmentCenter */,
@@ -581,6 +588,49 @@
 				4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		43A246F11F0381C300FB29FC /* LogInCenter */ = {
+			isa = PBXGroup;
+			children = (
+				43A246F21F0381C300FB29FC /* Controller */,
+				43A246F31F0381C300FB29FC /* Model */,
+				43A246F41F0381C300FB29FC /* Presenter */,
+				43A246F51F0381C300FB29FC /* View */,
+			);
+			path = LogInCenter;
+			sourceTree = "<group>";
+		};
+		43A246F21F0381C300FB29FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43A246F61F0381E500FB29FC /* CTLogInViewController.h */,
+				43A246F71F0381E500FB29FC /* CTLogInViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		43A246F31F0381C300FB29FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43A246F41F0381C300FB29FC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		43A246F51F0381C300FB29FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A246F91F0384F900FB29FC /* CTLogInTextField.h */,
+				43A246FA1F0384F900FB29FC /* CTLogInTextField.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9B6F0D5A7E2881BFB1422695 /* Frameworks */ = {
@@ -731,6 +781,7 @@
 				431D069B1EE52C8B004A6AC6 /* CTUserController.m in Sources */,
 				431D06AA1EE7C913004A6AC6 /* UIView+CTFrame.m in Sources */,
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
+				43A246FB1F0384F900FB29FC /* CTLogInTextField.m in Sources */,
 				434D733F1F00AE5700287563 /* CTLinkView.m in Sources */,
 				43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */,
 				43A246ED1F01090C00FB29FC /* CTHmPgNewsInputView.m in Sources */,
@@ -751,6 +802,7 @@
 				431D06B01EE82984004A6AC6 /* NSString+CTTime.m in Sources */,
 				431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */,
 				430598981EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m in Sources */,
+				43A246F81F0381E500FB29FC /* CTLogInViewController.m in Sources */,
 				43CC88B81EF2B3610020B024 /* CTHmPgNewsDetailVC.m in Sources */,
 				430598951EFA4C40001AC079 /* CTHmPgNewsDetailModel.m in Sources */,
 				4323E54B1EDE641B00B25F07 /* main.m in Sources */,

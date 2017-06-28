@@ -106,6 +106,7 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
         _textView.autocorrectionType = UITextAutocorrectionTypeNo;
         _textView.scrollEnabled = NO;
         _textView.linkTextAttributes = @{NSForegroundColorAttributeName : [UIColor lightGrayColor]};
+        _textView.backgroundColor = [UIColor clearColor];
     }
     
     return _textView;
@@ -137,9 +138,27 @@ NS_DEPRECATED_IOS(7_0, 10_0, "Use textView:shouldInteractWithURL:inRange:forInte
     
     _contentFont = contentFont;
     if (_content && _content.length > 0) {
-        _textView.attributedText = [[NSAttributedString alloc]initWithString:_content
-                                                                  attributes:@{NSFontAttributeName : _contentFont}];
+        NSMutableAttributedString *textAttStr = [[NSMutableAttributedString alloc]initWithAttributedString:_textView.attributedText];
+        [textAttStr removeAttribute:NSFontAttributeName range:NSMakeRange(0, textAttStr.length)];
+        [textAttStr addAttributes:@{NSFontAttributeName : _contentFont}
+                            range:NSMakeRange(0, textAttStr.length)];
     }
+}
+
+-(void)setContentColor:(UIColor *)contentColor{
+    if ([_contentColor isEqual:contentColor]) {
+        return;
+    }
+    _contentColor = contentColor;
+    _textView.textColor = _contentColor;
+}
+
+-(void)setLinkColor:(UIColor *)linkColor{
+    if ([_linkColor isEqual:linkColor]) {
+        return;
+    }
+    _linkColor = linkColor;
+    _textView.linkTextAttributes = @{NSForegroundColorAttributeName : _linkColor};
 }
 
 @end
