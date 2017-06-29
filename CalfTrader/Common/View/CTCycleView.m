@@ -108,7 +108,7 @@ UICollectionViewDataSource>
             position = UICollectionViewScrollPositionCenteredVertically;
             break;
         case CTCycleViewScrollDirectionHorizontal:
-        position = UICollectionViewScrollPositionCenteredHorizontally;
+            position = UICollectionViewScrollPositionCenteredHorizontally;
             
         default:
             break;
