@@ -95,10 +95,9 @@ UICollectionViewDataSource>
     
     if (self.dataSource.count > 0 &&
         self.contentView.contentOffset.x == 0) {
-        [self.contentView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0
-                                                                     inSection:self.contentView.numberOfSections/2]
-                                 atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-                                         animated:NO];
+        [self scrollItemAtIndexPath:[NSIndexPath indexPathForRow:0
+                                                       inSection:self.contentView.numberOfSections/2]
+                          animmated:NO];
     }
 }
 #pragma mark - 🔒private
