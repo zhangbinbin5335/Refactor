@@ -22,6 +22,10 @@ typedef UICollectionViewCell<CTCyleViewCellDelegate> *(^ CTCycleViewCellAtIndexP
                                                             NSString *cellID); // 自定义cell
 typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
 
+typedef NS_ENUM(NSInteger, CTCycleViewScrollDirection) {
+    CTCycleViewScrollDirectionVertical,
+    CTCycleViewScrollDirectionHorizontal
+};
 
 /**
  这是一个假的循环collectionView，只是默认设置了100个section，也就是有100组一样的广告。
@@ -38,6 +42,7 @@ typedef CGSize(^CTCycleViewItemSize)(CTCycleView *cycleView);
 @property (nonatomic, assign) NSTimeInterval showTime; // 展示时间，default 3秒
 @property (nonatomic, copy) CTCycleViewDidSelectCompletion didSelectCompletion;
 @property (nonatomic, strong) UIImage *placeholderImage; // 默认图片
+@property (nonatomic, assign) CTCycleViewScrollDirection scrollDirection;
 
 /**
  默认展示是一张图片

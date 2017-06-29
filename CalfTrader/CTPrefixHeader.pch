@@ -50,6 +50,8 @@ alpha:alpha1]
 // 约束
 #import "Masonry.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+// 刷新
+#import <MJRefresh/MJRefresh.h>
 
 #endif /* CTPrefixHeader_pch */
 

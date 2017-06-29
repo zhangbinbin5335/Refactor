@@ -75,6 +75,7 @@ UICollectionViewDataSource>
         self.showTime = 3;
         self.dataSource = @[];
         self.loop = YES;
+        self.scrollDirection = CTCycleViewScrollDirectionHorizontal;
     }
     return self;
 }
@@ -101,13 +102,28 @@ UICollectionViewDataSource>
     }
 }
 #pragma mark - 🔒private
+-(void)scrollItemAtIndexPath:(NSIndexPath*)indexPath animmated:(BOOL)animated{
+    UICollectionViewScrollPosition position = UICollectionViewScrollPositionCenteredHorizontally;
+    switch (self.scrollDirection) {
+        case CTCycleViewScrollDirectionVertical:
+            position = UICollectionViewScrollPositionCenteredVertically;
+            break;
+        case CTCycleViewScrollDirectionHorizontal:
+        position = UICollectionViewScrollPositionCenteredHorizontally;
+            
+        default:
+            break;
+    }
+    
+    [self.contentView scrollToItemAtIndexPath:indexPath
+                             atScrollPosition:position
+                                     animated:animated];
+}
 -(NSIndexPath*)resetIndexPath{
     NSIndexPath *currentIndexPath = [[self.contentView indexPathsForVisibleItems]lastObject];
     // 回到中间
     NSIndexPath *currentIndexPathReset = [NSIndexPath indexPathForRow:currentIndexPath.item inSection:kMaxSection/2];
-    [self.contentView scrollToItemAtIndexPath:currentIndexPathReset
-                             atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-                                     animated:NO];
+    [self scrollItemAtIndexPath:currentIndexPathReset animmated:NO];
     return currentIndexPathReset;
 }
 -(void)loopScroll{
@@ -126,9 +142,7 @@ UICollectionViewDataSource>
         nextSection ++;
     }
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:nextItem inSection:nextSection];
-    [self.contentView scrollToItemAtIndexPath:nextIndexPath
-                             atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
-                                     animated:YES];
+    [self scrollItemAtIndexPath:nextIndexPath animmated:YES];
 }
 
 -(void)startLoopTimer{
@@ -272,10 +286,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if ([_dataSource isEqualToArray:dataSource]) {
         return;
     }
+    [self stopLoopTimer];
     _dataSource = dataSource;
     [_contentView reloadData];
     [_pageControl setNumberOfPages:dataSource.count];
-    [self stopLoopTimer];
     [self startLoopTimer];
 }
 
@@ -327,6 +341,20 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     }
     _contentView.collectionViewLayout = _flowLayout;
     [_contentView reloadData];
+}
+
+-(void)setScrollDirection:(CTCycleViewScrollDirection)scrollDirection{
+    _scrollDirection = scrollDirection;
+    switch (scrollDirection) {
+        case CTCycleViewScrollDirectionHorizontal:
+            _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+            break;
+        case CTCycleViewScrollDirectionVertical:
+        _flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+            
+        default:
+            break;
+    }
 }
 
 @end
