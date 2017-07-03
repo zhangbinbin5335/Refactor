@@ -175,7 +175,7 @@ static NSString * const kCTHmPgNewsDetailCellID = @"kCTHmPgNewsDetailCellID";
     
     self.likedUserView.itemSize = ^CGSize(CTCycleView *cycleView) {
         return CGSizeMake(40,
-                          40);
+                          40 - 0.1);
     };
     
     [self.likedUserView mas_updateConstraints:^(MASConstraintMaker *make) {
