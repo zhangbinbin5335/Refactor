@@ -13,8 +13,6 @@
 #import "CTSocialShareManager.h"
 #import "CTRootViewController.h"
 
-#define APPDoewnlodaUrl(appid) [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/cn/lookup?id=%@",appid]]
-
 #import <UserNotifications/UserNotifications.h>
 
 @interface CTAppCheckModel : NSObject
@@ -46,10 +44,10 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     self.window.rootViewController = [[CTRootViewController alloc]init];
-    // 贷款管家 appid：1249274205
-    // 因果 appid :1067719666
-    NSString *appInfo = [NSString stringWithContentsOfURL:APPDoewnlodaUrl(@"1067719666") encoding:NSUTF8StringEncoding error:nil];
     
+    NSString *string = @"x";
+    NSAssert(string, @"string == nil");
+    NSDictionary *dic = @{@"xx" : string};
     
     return YES;
 }

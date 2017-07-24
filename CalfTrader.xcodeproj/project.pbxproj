@@ -12,6 +12,7 @@
 		430598981EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 430598971EFA4E30001AC079 /* CTHmPgNewsDetailPresenter.m */; };
 		4305989B1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4305989A1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m */; };
 		4305989E1EFBE2E6001AC079 /* cmn_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */; };
+		430B01A71F21AAC3009E028A /* CTPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 430B01A61F21AAC3009E028A /* CTPageIndicatorView.m */; };
 		431D06621EE14820004A6AC6 /* CTNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06611EE14820004A6AC6 /* CTNotificationManager.m */; };
 		431D06651EE4F91E004A6AC6 /* CTSocialShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06641EE4F91E004A6AC6 /* CTSocialShareManager.m */; };
 		431D06681EE50344004A6AC6 /* CTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431D06671EE50344004A6AC6 /* CTTabBarController.m */; };
@@ -39,6 +40,7 @@
 		4323E5851EE03C7F00B25F07 /* NSString+CTRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5841EE03C7F00B25F07 /* NSString+CTRandom.m */; };
 		4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */; };
 		4323E5911EE0FED200B25F07 /* NSData+CTMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */; };
+		43264C3B1F160A1E00D28115 /* XNUserTradePercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43264C3A1F160A1E00D28115 /* XNUserTradePercentView.m */; };
 		434D733F1F00AE5700287563 /* CTLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D733E1F00AE5700287563 /* CTLinkView.m */; };
 		43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43578D971EEE37F0008B0134 /* CTCycleView.m */; };
 		436A17A71EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */; };
@@ -48,12 +50,15 @@
 		43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246EF1F010FDA00FB29FC /* CTTextView.m */; };
 		43A246F81F0381E500FB29FC /* CTLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246F71F0381E500FB29FC /* CTLogInViewController.m */; };
 		43A246FB1F0384F900FB29FC /* CTLogInTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A246FA1F0384F900FB29FC /* CTLogInTextField.m */; };
+		43A541EC1F20B9450014ED15 /* CTBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A541EB1F20B9450014ED15 /* CTBadgeButton.m */; };
+		43ACDC381F0CAA67009E7112 /* CTRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43ACDC371F0CAA67009E7112 /* CTRefreshView.m */; };
 		43CC88AA1EF011290020B024 /* CTHmBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88A91EF011290020B024 /* CTHmBannerCell.m */; };
 		43CC88AF1EF161AC0020B024 /* CTHmPgBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88AE1EF161AC0020B024 /* CTHmPgBannerModel.m */; };
 		43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B11EF255450020B024 /* CTHmPgMarketCell.m */; };
 		43CC88B51EF25AAD0020B024 /* CTHmPgMarketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B41EF25AAD0020B024 /* CTHmPgMarketModel.m */; };
 		43CC88B81EF2B3610020B024 /* CTHmPgNewsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88B71EF2B3610020B024 /* CTHmPgNewsDetailVC.m */; };
 		43CC88BB1EF2B48D0020B024 /* CTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43CC88BA1EF2B48D0020B024 /* CTNavigationController.m */; };
+		43EA72891F0F807200E9C9EB /* ajaxHandler.js in Resources */ = {isa = PBXBuildFile; fileRef = 43EA72881F0F807200E9C9EB /* ajaxHandler.js */; };
 		43F39B421EF3ABC300369E57 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F39B411EF3ABC300369E57 /* WebKit.framework */; };
 		43F39B451EF3B87C00369E57 /* CTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F39B441EF3B87C00369E57 /* CTTableViewController.m */; };
 		43F39B4A1EF3CBDC00369E57 /* CTRadarScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F39B491EF3CBDC00369E57 /* CTRadarScanView.m */; };
@@ -70,6 +75,8 @@
 		430598991EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNwsDtalHdrView.h; sourceTree = "<group>"; };
 		4305989A1EFA8FE9001AC079 /* CTHmPgNwsDtalHdrView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNwsDtalHdrView.m; sourceTree = "<group>"; };
 		4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmn_default_avatar.png; sourceTree = "<group>"; };
+		430B01A51F21AAC3009E028A /* CTPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPageIndicatorView.h; sourceTree = "<group>"; };
+		430B01A61F21AAC3009E028A /* CTPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPageIndicatorView.m; sourceTree = "<group>"; };
 		431D06601EE14820004A6AC6 /* CTNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNotificationManager.h; sourceTree = "<group>"; };
 		431D06611EE14820004A6AC6 /* CTNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNotificationManager.m; sourceTree = "<group>"; };
 		431D06631EE4F91E004A6AC6 /* CTSocialShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTSocialShareManager.h; sourceTree = "<group>"; };
@@ -124,6 +131,8 @@
 		4323E5871EE03EBA00B25F07 /* NSDictionary+CTJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CTJson.m"; sourceTree = "<group>"; };
 		4323E58F1EE0FED200B25F07 /* NSData+CTMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CTMD5.h"; sourceTree = "<group>"; };
 		4323E5901EE0FED200B25F07 /* NSData+CTMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CTMD5.m"; sourceTree = "<group>"; };
+		43264C391F160A1E00D28115 /* XNUserTradePercentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNUserTradePercentView.h; sourceTree = "<group>"; };
+		43264C3A1F160A1E00D28115 /* XNUserTradePercentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNUserTradePercentView.m; sourceTree = "<group>"; };
 		434D733D1F00AE5700287563 /* CTLinkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLinkView.h; sourceTree = "<group>"; };
 		434D733E1F00AE5700287563 /* CTLinkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLinkView.m; sourceTree = "<group>"; };
 		43578D961EEE37F0008B0134 /* CTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCycleView.h; sourceTree = "<group>"; };
@@ -141,6 +150,10 @@
 		43A246F71F0381E500FB29FC /* CTLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLogInViewController.m; sourceTree = "<group>"; };
 		43A246F91F0384F900FB29FC /* CTLogInTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLogInTextField.h; sourceTree = "<group>"; };
 		43A246FA1F0384F900FB29FC /* CTLogInTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLogInTextField.m; sourceTree = "<group>"; };
+		43A541EA1F20B9450014ED15 /* CTBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBadgeButton.h; sourceTree = "<group>"; };
+		43A541EB1F20B9450014ED15 /* CTBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBadgeButton.m; sourceTree = "<group>"; };
+		43ACDC361F0CAA67009E7112 /* CTRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTRefreshView.h; sourceTree = "<group>"; };
+		43ACDC371F0CAA67009E7112 /* CTRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRefreshView.m; sourceTree = "<group>"; };
 		43CC88A81EF011290020B024 /* CTHmBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmBannerCell.h; sourceTree = "<group>"; };
 		43CC88A91EF011290020B024 /* CTHmBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmBannerCell.m; sourceTree = "<group>"; };
 		43CC88AD1EF161AC0020B024 /* CTHmPgBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgBannerModel.h; sourceTree = "<group>"; };
@@ -153,6 +166,7 @@
 		43CC88B71EF2B3610020B024 /* CTHmPgNewsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsDetailVC.m; sourceTree = "<group>"; };
 		43CC88B91EF2B48D0020B024 /* CTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNavigationController.h; sourceTree = "<group>"; };
 		43CC88BA1EF2B48D0020B024 /* CTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNavigationController.m; sourceTree = "<group>"; };
+		43EA72881F0F807200E9C9EB /* ajaxHandler.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ajaxHandler.js; sourceTree = "<group>"; };
 		43F39B411EF3ABC300369E57 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		43F39B431EF3B87C00369E57 /* CTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTableViewController.h; sourceTree = "<group>"; };
 		43F39B441EF3B87C00369E57 /* CTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTableViewController.m; sourceTree = "<group>"; };
@@ -294,6 +308,8 @@
 		431D067B1EE529BA004A6AC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				430B01A51F21AAC3009E028A /* CTPageIndicatorView.h */,
+				430B01A61F21AAC3009E028A /* CTPageIndicatorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +556,12 @@
 				434D733E1F00AE5700287563 /* CTLinkView.m */,
 				43A246EE1F010FDA00FB29FC /* CTTextView.h */,
 				43A246EF1F010FDA00FB29FC /* CTTextView.m */,
+				43ACDC361F0CAA67009E7112 /* CTRefreshView.h */,
+				43ACDC371F0CAA67009E7112 /* CTRefreshView.m */,
+				43A541EA1F20B9450014ED15 /* CTBadgeButton.h */,
+				43A541EB1F20B9450014ED15 /* CTBadgeButton.m */,
+				43264C391F160A1E00D28115 /* XNUserTradePercentView.h */,
+				43264C3A1F160A1E00D28115 /* XNUserTradePercentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -585,6 +607,7 @@
 		4323E56C1EDE695C00B25F07 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				43EA72881F0F807200E9C9EB /* ajaxHandler.js */,
 				4305989C1EFBE2E6001AC079 /* cmn_default_avatar.png */,
 			);
 			path = Resource;
@@ -711,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4305989E1EFBE2E6001AC079 /* cmn_default_avatar.png in Resources */,
+				43EA72891F0F807200E9C9EB /* ajaxHandler.js in Resources */,
 				436A17A81EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib in Resources */,
 				4323E5751EDE6B2000B25F07 /* CTLaunchScreen.storyboard in Resources */,
 				4323E5701EDE69E500B25F07 /* Assets.xcassets in Resources */,
@@ -772,9 +796,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A541EC1F20B9450014ED15 /* CTBadgeButton.m in Sources */,
 				431D06A71EE7C8AE004A6AC6 /* CTViewsFactory.m in Sources */,
 				4323E5911EE0FED200B25F07 /* NSData+CTMD5.m in Sources */,
 				431D067E1EE529F8004A6AC6 /* CTQuotationController.m in Sources */,
+				430B01A71F21AAC3009E028A /* CTPageIndicatorView.m in Sources */,
 				431D06A41EE7A0AE004A6AC6 /* CTHmPgNewsCell.m in Sources */,
 				431D06621EE14820004A6AC6 /* CTNotificationManager.m in Sources */,
 				43F39B4A1EF3CBDC00369E57 /* CTRadarScanView.m in Sources */,
@@ -783,6 +809,7 @@
 				4323E5821EE0367900B25F07 /* CTDESEncryption.m in Sources */,
 				43A246FB1F0384F900FB29FC /* CTLogInTextField.m in Sources */,
 				434D733F1F00AE5700287563 /* CTLinkView.m in Sources */,
+				43264C3B1F160A1E00D28115 /* XNUserTradePercentView.m in Sources */,
 				43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */,
 				43A246ED1F01090C00FB29FC /* CTHmPgNewsInputView.m in Sources */,
 				43CC88B21EF255450020B024 /* CTHmPgMarketCell.m in Sources */,
@@ -793,6 +820,7 @@
 				430598921EF8F004001AC079 /* CTHmPgNewsDetailCell.m in Sources */,
 				43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
+				43ACDC381F0CAA67009E7112 /* CTRefreshView.m in Sources */,
 				431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */,
 				4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */,
 				431D066B1EE52609004A6AC6 /* CTRootViewController.m in Sources */,

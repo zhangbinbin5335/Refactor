@@ -31,6 +31,7 @@ static const CGFloat kOffSet = 10;
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupSubViews];
         [self setupLayout];
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
 }

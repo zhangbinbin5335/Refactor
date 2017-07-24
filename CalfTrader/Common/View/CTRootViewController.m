@@ -35,7 +35,9 @@
     homePageNavController.tabBarItem = [self tabBarItemWithTitle:@"首页"];
     // 行情
     CTQuotationController *quotationController = [[CTQuotationController alloc]init];
-    quotationController.tabBarItem = [self tabBarItemWithTitle:@"行情"];
+    CTNavigationController *quotationNavController = [[CTNavigationController alloc]
+                                                      initWithRootViewController:quotationController];
+    quotationNavController.tabBarItem = [self tabBarItemWithTitle:@"行情"];
     // 交易
     CTInvestmentController *investmentController = [[CTInvestmentController alloc]init];
     investmentController.tabBarItem = [self tabBarItemWithTitle:@"交易"
@@ -52,7 +54,7 @@
     userController.tabBarItem = [self tabBarItemWithTitle:@"我的"];
     
     self.viewControllers = @[homePageNavController,
-                             quotationController,
+                             quotationNavController,
                              investmentController,
                              discoverController,
                              userController];

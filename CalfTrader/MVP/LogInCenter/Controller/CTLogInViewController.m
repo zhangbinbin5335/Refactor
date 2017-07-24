@@ -123,6 +123,7 @@
         _verifyCodeTextField = [[CTLogInTextField alloc] init];
         _verifyCodeTextField.placeholder = @"验证码";
         _verifyCodeTextField.rightButtonAppear = YES;
+        _verifyCodeTextField.secureTextEntry = YES;
     }
     
     return _verifyCodeTextField;
