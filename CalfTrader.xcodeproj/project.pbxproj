@@ -43,6 +43,7 @@
 		43264C3B1F160A1E00D28115 /* XNUserTradePercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43264C3A1F160A1E00D28115 /* XNUserTradePercentView.m */; };
 		434D733F1F00AE5700287563 /* CTLinkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 434D733E1F00AE5700287563 /* CTLinkView.m */; };
 		43578D981EEE37F0008B0134 /* CTCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43578D971EEE37F0008B0134 /* CTCycleView.m */; };
+		43696D491F25CFCE00F09771 /* CTPassWordInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 43696D481F25CFCE00F09771 /* CTPassWordInput.m */; };
 		436A17A71EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */; };
 		436A17A81EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */; };
 		436A17B11EFD31F200B7B510 /* CTHmPgNewsCmntModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 436A17B01EFD31F200B7B510 /* CTHmPgNewsCmntModel.m */; };
@@ -137,6 +138,8 @@
 		434D733E1F00AE5700287563 /* CTLinkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLinkView.m; sourceTree = "<group>"; };
 		43578D961EEE37F0008B0134 /* CTCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCycleView.h; sourceTree = "<group>"; };
 		43578D971EEE37F0008B0134 /* CTCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCycleView.m; sourceTree = "<group>"; };
+		43696D471F25CFCE00F09771 /* CTPassWordInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTPassWordInput.h; sourceTree = "<group>"; };
+		43696D481F25CFCE00F09771 /* CTPassWordInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTPassWordInput.m; sourceTree = "<group>"; };
 		436A17A41EFCC04400B7B510 /* CTHmPgNewsCommetnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTHmPgNewsCommetnCell.h; sourceTree = "<group>"; };
 		436A17A51EFCC04400B7B510 /* CTHmPgNewsCommetnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTHmPgNewsCommetnCell.m; sourceTree = "<group>"; };
 		436A17A61EFCC04400B7B510 /* CTHmPgNewsCommetnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTHmPgNewsCommetnCell.xib; sourceTree = "<group>"; };
@@ -562,6 +565,8 @@
 				43A541EB1F20B9450014ED15 /* CTBadgeButton.m */,
 				43264C391F160A1E00D28115 /* XNUserTradePercentView.h */,
 				43264C3A1F160A1E00D28115 /* XNUserTradePercentView.m */,
+				43696D471F25CFCE00F09771 /* CTPassWordInput.h */,
+				43696D481F25CFCE00F09771 /* CTPassWordInput.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				43A246F01F010FDA00FB29FC /* CTTextView.m in Sources */,
 				4323E57F1EDFFEEF00B25F07 /* CTNetworkManager.m in Sources */,
 				43ACDC381F0CAA67009E7112 /* CTRefreshView.m in Sources */,
+				43696D491F25CFCE00F09771 /* CTPassWordInput.m in Sources */,
 				431D06981EE52C6B004A6AC6 /* CTDiscoverController.m in Sources */,
 				4323E5881EE03EBA00B25F07 /* NSDictionary+CTJson.m in Sources */,
 				431D066B1EE52609004A6AC6 /* CTRootViewController.m in Sources */,

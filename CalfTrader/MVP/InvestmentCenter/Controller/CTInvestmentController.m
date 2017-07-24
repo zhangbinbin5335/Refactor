@@ -9,6 +9,7 @@
 #import "CTInvestmentController.h"
 #import "CTRefreshView.h"
 #import "XNUserTradePercentView.h"
+#import "CTPassWordInput.h"
 
 @interface CTInvestmentController ()
 
@@ -46,16 +47,9 @@
     
     [self.view addSubview:rercentView];
     
-    UILabel *htLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 330, 300, 20)];
-    htLabel.font = [UIFont fontWithName:@"Heiti SC" size:24];
-    htLabel.text = @"￥";
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 350, 300, 20)];
-    label.font = [UIFont systemFontOfSize:24];
-    label.text = @"￥";
-    
-    [self.view addSubview:htLabel];
-    [self.view addSubview:label];
+    CTPassWordInput *textField = [[CTPassWordInput alloc]initWithFrame:CGRectMake(20, 340, 340, 80)];
+    textField.passwordCount = 4;
+    [self.view addSubview:textField];
 }
 
 #pragma mark - 🔒private
